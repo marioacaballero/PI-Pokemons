@@ -19,7 +19,7 @@ const pokemonsApi = async () => {
           return {
             id: pokemon.data.id,
             name: pokemon.data.name,
-            img: pokemon.data.sprites.other.home.front_default,
+            img: pokemon.data.sprites.other.dream_world.front_default,
             types: pokemon.data.types.map((typ) => {
               return {
                 name: typ.type.name,
