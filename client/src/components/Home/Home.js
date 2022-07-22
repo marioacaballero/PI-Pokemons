@@ -23,9 +23,13 @@ function Home() {
           gap: "2rem",
         }}
       >
-        {pokemons.map((pok) => (
-          <Card key={pok.id} name={pok.name} img={pok.img} id={pok.id} />
-        ))}
+        {pokemons.length > 0 ? (
+          pokemons.map((pok) => (
+            <Card key={pok.id} name={pok.name} img={pok.img} id={pok.id} />
+          ))
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </div>
   );
