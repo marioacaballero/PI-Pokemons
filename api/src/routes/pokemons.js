@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   const allPokes = await allPokemons();
 
   if (name) {
-    const pokemon = allPokes.find(
+    const pokemon = allPokes.filter(
       (pok) => pok.name.toLowerCase() === name.toLowerCase()
     );
     return pokemon

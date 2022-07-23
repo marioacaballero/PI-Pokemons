@@ -19,10 +19,11 @@ const pokemonsApi = async () => {
           return {
             id: pokemon.data.id,
             name: pokemon.data.name,
-            img: pokemon.data.sprites.other.dream_world.front_default,
+            img: pokemon.data.sprites.other["official-artwork"].front_default,
             types: pokemon.data.types.map((typ) => {
               return {
                 name: typ.type.name,
+                img: `https://typedex.app/images/ui/types/dark/${typ.type.name}.svg`,
               };
             }),
             hp: pokemon.data.stats[0].base_stat,
@@ -37,9 +38,9 @@ const pokemonsApi = async () => {
 
       apiPokemons.push(...apiRespModif);
       next = apiResp.data.next;
-    } while (next != null && apiPokemons.length < 20); //with apiPokemons.length I can take the limits of the pokemons to get with 20 to 20 for time.
+    } while (next != null && apiPokemons.length < 40); //with apiPokemons.length I can take the limits of the pokemons to get with 20 to 20 for time.
     // console.log(apiPokemons);
-    
+
     return apiPokemons;
   } catch (error) {
     console.log(error);

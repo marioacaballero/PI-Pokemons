@@ -1,5 +1,7 @@
 import {
+  CLEAN_POKEMONS,
   CLEAN_POKE_DETAIL,
+  POKEMON_SEARCH,
   SET_POKEMONS,
   SET_POKEMON_DETAIL,
 } from "../actions/actions";
@@ -17,6 +19,12 @@ export const rootReducer = (state = INITIAL_STATE, { type, payload }) => {
         pokemons: payload,
       };
     }
+    case CLEAN_POKEMONS: {
+      return {
+        ...state,
+        pokemons: payload,
+      };
+    }
     case SET_POKEMON_DETAIL: {
       return {
         ...state,
@@ -27,6 +35,12 @@ export const rootReducer = (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         pokemonDetail: payload,
+      };
+    }
+    case POKEMON_SEARCH: {
+      return {
+        ...state,
+        pokemons: payload,
       };
     }
     default: {
