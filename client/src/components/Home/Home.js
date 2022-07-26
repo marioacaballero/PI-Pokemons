@@ -1,51 +1,30 @@
 import React, { useEffect, useState } from "react";
 import * as ReactRedux from "react-redux";
-import { getPokemons } from "../../actions/actions";
+import { getPokemons } from "../../actions/allPokeActions";
 import Card from "../Card/Card";
-import NavBar from "../NavBar/NavBar";
+import Filters from "../Filters/Filters";
+import Pagination from "../Pagination/Pagination";
 
 function Home() {
   const dispatch = ReactRedux.useDispatch();
   const [currentPage, setCurrentPage] = useState(0);
+  const [order, setOrder] = useState("");
 
   useEffect(() => {
     dispatch(getPokemons());
   }, [dispatch]);
 
-  const pokemons = ReactRedux.useSelector((state) => state.pokemons);
+  const pokemons = ReactRedux.useSelector((state) => state.pokemons.pokemons);
 
   const pokePage = () => {
     return pokemons.slice(currentPage, currentPage + 12);
   };
 
-  const next = () => {
-    if (pokePage().length % 12 === 0) {
-      setCurrentPage(currentPage + 12);
-    }
-  };
-
-  const previous = () => {
-    if (currentPage > 0) {
-      setCurrentPage(currentPage - 12);
-    }
-  };
-
-  const styPrev = () => {
-    if (currentPage === 0) {
-      return "none";
-    }
-  };
-
-  const styNext = () => {
-    if (pokePage().length % 12 !== 0) {
-      return "none";
-    }
-  };
-
   return (
     <div>
       <h1>Home</h1>
-      <NavBar />
+      <Filters setOrder={setOrder} />
+
       <div
         style={{
           display: "grid",
@@ -69,13 +48,12 @@ function Home() {
           <h1>Loading...</h1>
         )}
       </div>
-      <button onClick={previous} style={{ display: styPrev() }}>
-        Previous
-      </button>
-      <label> Page: {currentPage / 12 + 1} </label>
-      <button onClick={next} style={{ display: styNext() }}>
-        Next
-      </button>
+      <Pagination
+        pokemons={pokemons.length}
+        pokePage={pokePage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 }

@@ -1,11 +1,9 @@
 import React from "react";
 import * as ReactRedux from "react-redux";
-import { cleanPokeDetail, getPokemonDetail } from "../../actions/actions";
+import { cleanPokeDetail, getPokemonDetail } from "../../actions/pokeActions";
+import { capFirstLet } from "../Auxiliaries/Auxiliaries";
 
 function CardDetail(props) {
-  function capFirstLet(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
   const id = props.match.params.id;
   // console.log(id);
   const dispatch = ReactRedux.useDispatch();
@@ -17,7 +15,7 @@ function CardDetail(props) {
     };
   }, [dispatch, id]);
 
-  const pokemon = ReactRedux.useSelector((state) => state.pokemonDetail);
+  const pokemon = ReactRedux.useSelector((state) => state.pokemon.pokemon);
   // console.log(pokemon);
 
   return (
