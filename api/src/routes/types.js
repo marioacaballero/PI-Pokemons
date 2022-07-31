@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
     Type.findOrCreate({
       where: {
         name: typ,
+        img: `https://typedex.app/images/ui/types/dark/${typ}.svg`,
       },
     })
   );

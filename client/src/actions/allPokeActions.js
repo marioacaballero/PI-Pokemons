@@ -6,6 +6,7 @@ export const CLEAN_POKEMONS = "CLEAN_POKEMONS";
 export const SET_POKEMONS = "SET_POKEMONS";
 export const ORDER_POKEMONS = "ORDER_POKEMONS";
 export const FILTER_POKEMONS = "FILTER_POKEMONS";
+export const FILTER_POKEMONS2 = "FILTER_POKEMONS2";
 
 export const setPokemons = (data) => {
   return {
@@ -58,6 +59,13 @@ export const orderPokemons = (data) => {
 export const filterPokemons = (data) => {
   return {
     type: FILTER_POKEMONS,
+    payload: data,
+  };
+};
+
+export const filterPokemons2 = (data) => {
+  return {
+    type: FILTER_POKEMONS2,
     payload: data,
   };
 };

@@ -13,7 +13,9 @@ export const rootReducer = combineReducers({
 //Now I have a state with 3 props, each with his props on INITIAL_STATE.
 /* state = {
     pokemons: {
-      pokemons: []
+      pokemons: [],
+      allPokemons: [],
+      pokeTypes: [],
     },
     pokemon: {
        pokemon: []

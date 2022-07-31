@@ -10,7 +10,6 @@ function CardCreate() {
   //some validator to prevent post on db with errors
   let notNull = /\S+/;
   let notNumber = /[a-z]/;
-  let checkUrl = /^(ftp|http|https):\/\/[^ "]+$/;
 
   const initialState = {
     name: "",
@@ -24,10 +23,7 @@ function CardCreate() {
     types: [],
   };
 
-  const [errors, setErrors] = useState({
-    name: "",
-    img: "",
-  });
+  let [error, setError] = useState("");
   const [pokemon, setPokemon] = useState(initialState);
 
   useEffect(() => {
@@ -39,15 +35,12 @@ function CardCreate() {
   //create a handle validator to set erros
   const handleValidate = (pokemon) => {
     if (!notNull.test(pokemon.name)) {
-      errors.name = "Name cannot be null";
+      error = "Name cannot be null";
     }
     if (!notNumber.test(pokemon.name)) {
-      errors.name = "Name must be a string";
+      error = "Name must be a string";
     }
-    if (!checkUrl.test(pokemon.img)) {
-      errors.img = "Invalid url for image";
-    }
-    return errors;
+    return error;
   };
 
   const handleInputChange = (event) => {
@@ -55,7 +48,7 @@ function CardCreate() {
       ...pokemon,
       [event.target.name]: event.target.value,
     });
-    setErrors(
+    setError(
       handleValidate({
         ...pokemon,
         [event.target.name]: event.target.value,
@@ -63,24 +56,33 @@ function CardCreate() {
     );
   };
 
+  const handleTypes = (event) => {
+    if (pokemon.types.length < 2) {
+      setPokemon({
+        ...pokemon,
+        types: [...pokemon.types, event.target.value],
+      });
+    } else {
+      alert("At least two types per pokemon");
+    }
+  };
+
+  const clear = (event) => {
+    event.preventDefault();
+    setPokemon({
+      ...pokemon,
+      types: [],
+    });
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!errors.name && !errors.img) {
+    if (!error) {
       dispatch(newPokemon(pokemon));
       setPokemon(initialState);
       dispatch(cleanPokemons);
-    } else if (errors.name) {
-      alert(errors.name); //show alert if error validate exist and set errors to ''
-      setErrors({
-        name: "",
-        img: "",
-      });
     } else {
-      alert(errors.img);
-      setErrors({
-        name: "",
-        img: "",
-      });
+      alert(error); //show alert if error validate exist and set errors to ''
+      setError("");
     }
   };
 
@@ -137,19 +139,17 @@ function CardCreate() {
         value={pokemon.img}
         onChange={handleInputChange}
       />
-      <select>
+      <label> Types </label>
+      <ol>
+        {pokemon.types &&
+          pokemon.types.map((typ, i) => <li key={i}>{capFirstLet(typ)}</li>)}
+        <button onClick={(event) => clear(event)}>Reset Types</button>
+      </ol>
+      <select onChange={handleTypes}>
+        <option> </option>
         {allTypes &&
           allTypes.map((typ) => (
-            <option key={typ.id} name={typ.name} value={pokemon.types}>
-              {capFirstLet(typ.name)}
-            </option>
-          ))}
-      </select>
-      <select>
-        <option name="undefined">undefined</option>
-        {allTypes &&
-          allTypes.map((typ) => (
-            <option key={typ.id} name={typ.name} value={pokemon.types}>
+            <option key={typ.id} name={typ.name} value={typ.name}>
               {capFirstLet(typ.name)}
             </option>
           ))}

@@ -35,14 +35,14 @@ export const pokeFilter = (pokemons, filterType) => {
   let pokeFilter;
   if (filterType === "all") {
     pokeFilter = pokemons;
-  } else if (filterType === "API") {
-    pokeFilter = pokemons.filter((poke) => !poke.createdOnDb);
-  } else if (filterType === "DB") {
-    pokeFilter = pokemons.filter((poke) => poke.createdOnDb);
-    if (pokeFilter.length === 0) {
-      pokeFilter = pokemons;
-      alert("We don't have any pokemon on DB");
-    }
+    // } else if (filterType === "API") {
+    //   pokeFilter = pokemons.filter((poke) => !poke.createdOnDb);
+    // } else if (filterType === "DB") {
+    //   pokeFilter = pokemons.filter((poke) => poke.createdOnDb);
+    //   if (pokeFilter.length === 0) {
+    //     pokeFilter = pokemons;
+    //     alert("We don't have any pokemon on DB");
+    //   }
   } else {
     pokeFilter = pokemons.filter(
       (poke) => poke.types.some((typ) => typ.name === filterType) //I use some because give a boolean result. Find methods give the element or undefined
@@ -51,6 +51,26 @@ export const pokeFilter = (pokemons, filterType) => {
       pokeFilter = pokemons;
       alert("We don't have that pokemon's type");
     }
+  }
+  return pokeFilter;
+};
+
+export const pokeFilter2 = (pokemons2, filterType2) => {
+  let pokeFilter;
+  if (filterType2 === "API") {
+    pokeFilter = pokemons2.filter((poke) => !poke.createdOnDb);
+    if (pokeFilter.length === 0) {
+      pokeFilter = pokemons2;
+      alert("We don't have pokemons on API with that filter");
+    }
+  } else if (filterType2 === "DB") {
+    pokeFilter = pokemons2.filter((poke) => poke.createdOnDb);
+    if (pokeFilter.length === 0) {
+      pokeFilter = pokemons2;
+      alert("We don't have pokemons on DB with that filter");
+    }
+  } else {
+    pokeFilter = pokemons2;
   }
   return pokeFilter;
 };

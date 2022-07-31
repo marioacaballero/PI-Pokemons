@@ -17,6 +17,9 @@ function Types() {
     event.preventDefault();
     dispatch(filterPokemons(event.target.value));
   };
+
+
+
   return (
     <div>
       <select>

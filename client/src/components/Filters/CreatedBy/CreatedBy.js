@@ -1,12 +1,12 @@
 import React from "react";
 import * as ReactRedux from "react-redux";
-import { filterPokemons } from "../../../actions/allPokeActions";
+import { filterPokemons2 } from "../../../actions/allPokeActions";
 
 function CreatedBy() {
   const dispatch = ReactRedux.useDispatch();
   const handleCreated = (event) => {
     event.preventDefault();
-    dispatch(filterPokemons(event.target.value));
+    dispatch(filterPokemons2(event.target.value));
   };
   return (
     <div>

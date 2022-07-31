@@ -55,7 +55,7 @@ const pokemonsDb = async () => {
   return await Pokemon.findAll({
     include: {
       model: Type,
-      attributes: ["name"],
+      attributes: ["name", "img"],
       through: {
         attributes: [],
       },

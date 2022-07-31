@@ -7,7 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* body,
+input {
+  font-family: "Pokemon Fire Red", sans-serif;
+} */
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
