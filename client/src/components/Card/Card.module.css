@@ -1,7 +1,64 @@
 .card {
   border: 1px solid gray;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   width: fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
+
+.link,
+h2 {
+  font-size: 1.1rem;
+  height: fit-content;
+}
+
+.link {
+  left: 0.5rem;
+  position: absolute;
+  color: white;
+}
+
+.h2 {
+  right: 0.5rem;
+  position: absolute;
+}
+
+.divImg {
+  border: 1px solid gray;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  background-color: #fdffb6;
+}
+
+.img {
+  width: 9.5rem;
+  height: 9.5rem;
+}
+
+.typeImg{
+  border: 0.1px solid gray;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* .types1 {
+  height: 3rem;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+} */
+
+/* .name {
+  border: 1px solid gray;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 10rem;
+  height: 2.5rem;
+  align-items: center;
+} */
