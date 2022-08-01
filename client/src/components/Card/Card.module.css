@@ -1,6 +1,6 @@
 .card {
-  border: 1px solid gray;
-  /* border-radius: 0.5rem; */
+  border: 2px solid gray;
+  border-radius: 0.55rem;
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -17,7 +17,9 @@ h2 {
 .link {
   left: 0.5rem;
   position: absolute;
-  color: white;
+  color: #2f0e07;
+  -webkit-text-stroke: 0.5px #134074;  /*to make border to font */
+  text-decoration: none;
 }
 
 .h2 {

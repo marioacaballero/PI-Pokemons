@@ -2,12 +2,12 @@ import React from "react";
 
 function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
   const pageNumber = [];
-  for (let i = 1; i < Math.ceil(pokemons / 12); i++) {
-    pageNumber.push(i);
+  for (let i = 0; i < Math.ceil(pokemons / 12); i++) {
+    pageNumber.push(i+1);
   }
 
   const changeTo = (number) => {
-    setCurrentPage(number * 12);
+    setCurrentPage((number - 1) * 12);
   };
 
   const next = () => {
