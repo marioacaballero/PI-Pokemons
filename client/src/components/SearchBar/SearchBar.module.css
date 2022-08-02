@@ -1,0 +1,31 @@
+.sear {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.input {
+  height: 1.75rem;
+  width: 20rem;
+  color: #606c38;
+  border-radius: 0.75rem;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: var(--pokedex-bkg-out);
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-left: 0.4rem;
+}
+
+.find {
+  height: 2.5rem;
+  width: 2.5rem;
+}

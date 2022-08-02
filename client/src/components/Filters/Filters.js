@@ -8,20 +8,20 @@ import style from "./Filters.module.css";
 function Filters({ setOrder }) {
   return (
     <div className={style.filters}>
-      <SearchBar />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
-          justifyItems: "center",
-          gap: "2rem",
-          padding: "2rem",
-        }}
-      >
-        <label> Filters by </label>
+      <div className={style.search}>
+        <SearchBar />
+      </div>
+      <div className={style.types}>
+        <label>
+          <h3 className={style.h3}>FILTERS BY:</h3>
+        </label>
         <Types />
         <CreatedBy />
-        <label> Order by </label>
+      </div>
+      <div className={style.order}>
+        <label>
+          <h3 className={style.h3}>ORDER BY:</h3>
+        </label>
         <Order setOrder={setOrder} />
       </div>
     </div>

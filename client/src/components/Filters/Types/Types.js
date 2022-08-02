@@ -18,8 +18,6 @@ function Types() {
     dispatch(filterPokemons(event.target.value));
   };
 
-
-
   return (
     <div>
       <select>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { capFirstLet } from "../Auxiliaries/Auxiliaries";
 import style from "./Card.module.css";
 import { typ } from "./CSS Types/auxiliar";
 
