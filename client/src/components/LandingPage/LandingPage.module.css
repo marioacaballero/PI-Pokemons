@@ -1,5 +1,78 @@
-.div {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
+.divA {
+  min-height: 16vh;
+  background-color: black;
+}
+
+.divRedTop {
+  position: absolute;
+  top: 4%;
+  background-color: #fb5607;
+  height: 5%;
+  width: 100%;
+}
+
+.divB {
+  min-height: 44vh;
+  background-color: #43aa8b;
+  width: 100%;
+}
+
+.divC {
+  min-height: 40vh;
+  background-color: black;
+}
+
+.divRedBot {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 6%;
+  background-color: #9d0208;
+  height: 8%;
+  width: 100%;
+}
+.divRedBot > h2 {
+  color: white;
+  font-size: 2rem;
+}
+
+.char {
+  width: 30rem;
+  height: 27.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 30%;
+}
+
+.pokemon {
+  position: absolute;
+  left: 10%;
+  top: 5%;
+  width: 750px; /*582 x 282*/
+  height: 300px;
+}
+
+.start {
+  margin-bottom: 4% black;
+  color: white;
+  border: none;
+  font-size: 4rem;
+  cursor: pointer;
+  background: none;
+  position: absolute;
+  left: 20%;
+  bottom: 24%;
+  animation-name: btn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes btn {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
 }

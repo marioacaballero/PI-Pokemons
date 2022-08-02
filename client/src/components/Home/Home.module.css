@@ -1,0 +1,8 @@
+.pokemons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--pokedex-bkg-in)
+}

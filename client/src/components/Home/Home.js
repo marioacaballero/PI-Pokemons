@@ -4,6 +4,7 @@ import { getPokemons } from "../../actions/allPokeActions";
 import Card from "../Card/Card";
 import Filters from "../Filters/Filters";
 import Pagination from "../Pagination/Pagination";
+import style from "./Home.module.css";
 
 function Home() {
   const dispatch = ReactRedux.useDispatch();
@@ -22,18 +23,8 @@ function Home() {
 
   return (
     <div>
-      <h1>Home</h1>
       <Filters setOrder={setOrder} />
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          justifyItems: "center",
-          gap: "2rem",
-          padding: "2rem",
-        }}
-      >
+      <div className={style.pokemons}>
         {pokemons.length > 0 ? (
           pokePage().map((pok) => (
             <Card

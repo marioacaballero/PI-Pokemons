@@ -1,9 +1,10 @@
 import React from "react";
+import style from "./Pagination.module.css";
 
 function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
   const pageNumber = [];
   for (let i = 0; i < Math.ceil(pokemons / 12); i++) {
-    pageNumber.push(i+1);
+    pageNumber.push(i + 1);
   }
 
   const changeTo = (number) => {
@@ -36,7 +37,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
   };
 
   return (
-    <div>
+    <div className={style.pagination}>
       <button onClick={previous} style={{ display: styPrev() }}>
         Previous
       </button>
