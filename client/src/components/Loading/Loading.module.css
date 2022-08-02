@@ -1,0 +1,34 @@
+.div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.img {
+  /* position: relative;
+  left: 33%; */
+  width: 54rem;
+  height: 34.5rem;
+}
+
+.h2{
+  font-size: 5rem;
+  color: #80b918;
+  -webkit-text-stroke: 0.25rem white
+}
+
+.pokeball {
+  height: 15rem;
+  width: 15rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

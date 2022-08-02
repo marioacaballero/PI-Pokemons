@@ -3,6 +3,7 @@ import * as ReactRedux from "react-redux";
 import { getPokemons } from "../../actions/allPokeActions";
 import Card from "../Card/Card";
 import Filters from "../Filters/Filters";
+import Loading from "../Loading/Loading";
 import Pagination from "../Pagination/Pagination";
 import style from "./Home.module.css";
 
@@ -36,7 +37,7 @@ function Home() {
             />
           ))
         ) : (
-          <h1>Loading...</h1>
+          <Loading className={style.poke}/>
         )}
       </div>
       <Pagination
