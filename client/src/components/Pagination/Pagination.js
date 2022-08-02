@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Pagination.module.css";
+import styles from "./Pagination.module.css";
 
 function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
   const pageNumber = [];
@@ -37,20 +37,36 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
   };
 
   return (
-    <div className={style.pagination}>
-      <button onClick={previous} style={{ display: styPrev() }}>
-        Previous
-      </button>
-      <>
+    <div className={styles.pagination}>
+      <div>
+        <button
+          onClick={previous}
+          className={styles.btnT}
+          style={{ display: styPrev() }}
+        >
+          PREV
+        </button>
+      </div>
+      <div className={styles.numbers}>
         {pageNumber.map((num) => (
-          <button key={num} onClick={() => changeTo(num)}>
+          <button
+            key={num}
+            onClick={() => changeTo(num)}
+            className={styles.number}
+          >
             {num}
           </button>
         ))}
-      </>
-      <button onClick={next} style={{ display: styNext() }}>
-        Next
-      </button>
+      </div>
+      <div>
+        <button
+          onClick={next}
+          className={styles.btnB}
+          style={{ display: styNext() }}
+        >
+          NEXT
+        </button>
+      </div>
     </div>
   );
 }
