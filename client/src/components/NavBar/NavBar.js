@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import style from "./NavBar.module.css";
 import pokemon from "../Imgs/pokemon5.png";
 import newpoke from "../Imgs/newPokemon.png";
+import { paths } from "./Auxiliaries/Auxiliar";
 
-function NavBar() {
+function NavBar(props) {
   return (
-    <div className={style.nav}>
+    <div className={paths(props.location.pathname)}>
       <Link to={"/home"}>
         <img alt="pokemon" src={pokemon} className={style.pokemon} />
       </Link>

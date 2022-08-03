@@ -1,11 +1,11 @@
-.nav {
+/* .nav {
   background-color: var(--pokedex-bkg-out);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: 3.3rem;
-}
+} */
 
 .pokemon {
   width: 8.3rem;

@@ -1,0 +1,21 @@
+.home,
+.detail,
+.newpokemon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 3.3rem;
+}
+
+.home {
+  background-color: var(--pokedex-bkg-out);
+}
+
+.detail {
+  background-color: #f1a208;
+}
+
+.newpokemon {
+  background-color: aquamarine;
+}
