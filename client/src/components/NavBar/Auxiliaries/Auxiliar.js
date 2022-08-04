@@ -6,7 +6,7 @@ export const paths = (path) => {
       return style.home;
     case "/about":
       return style.about;
-    case "home/newpokemon":
+    case "/home/newpokemon":
       return style.newpokemon;
     default:
       return style.detail;

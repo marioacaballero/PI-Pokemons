@@ -23,6 +23,7 @@
 .h3{
   color: white;
   font-size: x-large;
+  -webkit-text-stroke: 0.5px black;
 }
 
 .newpoke {

@@ -27,9 +27,32 @@ export const cleanPokeDetail = () => {
 };
 
 export const newPokemon = (data) => {
+  let types;
+
+  if (data.firstT || data.secondT) {
+    types = [data.firstT, data.secondT];
+  } else {
+    types = ["unknown"];
+  }
+
+  const newPok = {
+    name: data.name,
+    hp: data.hp,
+    attack: data.attack,
+    defense: data.defense,
+    speed: data.speed,
+    height: data.height,
+    weigth: data.weigth,
+    img: data.img,
+    types,
+  };
+
   return async () => {
     try {
-      const pokemon = await axios.post("http://localhost:3001/pokemons", data);
+      const pokemon = await axios.post(
+        "http://localhost:3001/pokemons",
+        newPok
+      );
       alert("New pokemon added to database");
       return pokemon;
     } catch (error) {

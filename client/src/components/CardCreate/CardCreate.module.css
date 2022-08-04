@@ -1,0 +1,121 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 94vh;
+  background-color: #f1f2aa /*#ddf9da*/;
+}
+
+.mainDiv {
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.mainDiv > section {
+  height: 35rem;
+  width: 30rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.secImg {
+  background-color: #f1fffa;
+  border: 1rem solid #d295bf;
+}
+
+.secStat {
+  border: 1rem solid #d4d700;
+  background-color: #EAEB80;
+}
+
+.img {
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+  width: 25rem;
+  text-align: center;
+}
+
+.inpImg {
+  width: 20rem;
+}
+
+label {
+  display: flex;
+}
+
+.divTypes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.divTypes > select {
+  text-transform: uppercase;
+  width: 10rem;
+  border: 1px solid #ddd5d0;
+  height: 1.5rem;
+  background-color: #fcf6bd;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.mainDiv > section > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 3.8rem;
+  gap: 4rem;
+}
+
+input {
+  text-transform: uppercase;
+  width: 10rem;
+  border: 1px solid #ddd5d0;
+  height: 1.5rem;
+  background-color: #fcf6bd;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  background: none;
+  border: 4px solid #87eb7d;
+  border-radius: 0.5rem;
+  display: flex;
+  height: 3.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  /* border: 3px solid #87eb7d;
+  border-radius: 0.5rem; */
+  animation-name: btnNew;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes btnNew {
+  0% {
+    border: 0.1px solid #87eb7d;
+    border-radius: 0.5rem;
+  }
+  50% {
+    border: 6px solid #87eb7d;
+    border-radius: 0.5rem;
+  }
+  100% {
+    border: 0.1px solid #87eb7d;
+    border-radius: 0.5rem;
+  }
+}
