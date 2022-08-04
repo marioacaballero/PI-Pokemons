@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { getTypes } from "../../../actions/typeActions";
 import * as ReactRedux from "react-redux";
 import { filterPokemons } from "../../../actions/allPokeActions";
-import { capFirstLet } from "../../Auxiliaries/Auxiliaries";
+import style from "./Type.module.css";
 
 function Types() {
   const dispatch = ReactRedux.useDispatch();
@@ -19,9 +19,9 @@ function Types() {
   };
 
   return (
-    <div>
+    <div className={style.mainDiv}>
       <select>
-        <option>Types</option>
+        <option>TYPES</option>
         <option
           value="all"
           onClick={(event) => {
@@ -39,7 +39,7 @@ function Types() {
                 handleTypes(event);
               }}
             >
-              {capFirstLet(typ.name)}
+              {typ.name.toUpperCase()}
             </option>
           ))}
       </select>

@@ -116,7 +116,7 @@ function CardCreate() {
                 {allTypes &&
                   allTypes.map((typ) => (
                     <option key={typ.id} name={typ.name} value={typ.name}>
-                      {capFirstLet(typ.name)}
+                      {typ.name.toUpperCase()}
                     </option>
                   ))}
               </select>
@@ -125,7 +125,7 @@ function CardCreate() {
                 {allTypes &&
                   allTypes.map((typ) => (
                     <option key={typ.id} name={typ.name} value={typ.name}>
-                      {capFirstLet(typ.name)}
+                      {typ.name.toUpperCase()}
                     </option>
                   ))}
               </select>
@@ -219,10 +219,12 @@ function CardCreate() {
         </section>
       </div>
       <div className={style.divButton}>
-        <button type={"submit"} className={style.btn}><h4>
-                <h4>LET'S GO!</h4>
-                <h5></h5>
-              </h4></button>
+        <button type={"submit"} className={style.btn}>
+          <h4>
+            <h4>LET'S GO!</h4>
+            <h5></h5>
+          </h4>
+        </button>
       </div>
     </form>
   );

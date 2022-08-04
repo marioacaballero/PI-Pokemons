@@ -1,6 +1,7 @@
 import React from "react";
 import * as ReactRedux from "react-redux";
 import { orderPokemons } from "../../../actions/allPokeActions";
+import style from './Order.module.css';
 
 function Order({ setOrder }) {
   const dispatch = ReactRedux.useDispatch();
@@ -11,7 +12,7 @@ function Order({ setOrder }) {
     setOrder(event.target.value);
   };
   return (
-    <div>
+    <div className={style.mainDiv}>
       <select>
         <option
           value=""
@@ -19,7 +20,7 @@ function Order({ setOrder }) {
             handleOrder(event);
           }}
         >
-          #Pokedex ⬆
+          #POKEDEX ⬆
         </option>
         <option
           value="pokeDown"
@@ -27,7 +28,7 @@ function Order({ setOrder }) {
             handleOrder(event);
           }}
         >
-          #Pokedex ⬇
+          #POKEDEX ⬇
         </option>
         <option
           value="nameAZ"
@@ -35,7 +36,7 @@ function Order({ setOrder }) {
             handleOrder(event);
           }}
         >
-          Name A-Z
+          NAME ⬆
         </option>
         <option
           value="nameZA"
@@ -43,7 +44,7 @@ function Order({ setOrder }) {
             handleOrder(event);
           }}
         >
-          Name Z-A
+          NAME ⬇
         </option>
         <option
           value="atkUp"

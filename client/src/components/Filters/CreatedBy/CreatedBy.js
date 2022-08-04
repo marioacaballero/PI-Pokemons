@@ -1,6 +1,7 @@
 import React from "react";
 import * as ReactRedux from "react-redux";
 import { filterPokemons2 } from "../../../actions/allPokeActions";
+import style from "./CreatedBy.module.css";
 
 function CreatedBy() {
   const dispatch = ReactRedux.useDispatch();
@@ -9,9 +10,9 @@ function CreatedBy() {
     dispatch(filterPokemons2(event.target.value));
   };
   return (
-    <div>
+    <div className={style.mainDiv}>
       <select>
-        <option> Created by </option>
+        <option> ORIGIN </option>
         <option
           value="all"
           onClick={(event) => {

@@ -13,14 +13,14 @@ function Filters({ setOrder }) {
       </div>
       <div className={style.types}>
         <label>
-          <h3 className={style.h3}>FILTERS BY:</h3>
+          <h3 className={style.h3}>FILTERS</h3>
         </label>
         <Types />
         <CreatedBy />
       </div>
       <div className={style.order}>
         <label>
-          <h3 className={style.h3}>ORDER BY:</h3>
+          <h3 className={style.h3}>ORDER</h3>
         </label>
         <Order setOrder={setOrder} />
       </div>

@@ -65,6 +65,7 @@ label {
   background-color: #fcf6bd;
   border-radius: 0.5rem;
   text-align: center;
+  cursor: pointer;
 }
 .mainDiv > section > div {
   display: flex;
