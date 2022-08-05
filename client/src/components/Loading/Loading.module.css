@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  min-height: 85vh;
 }
 
 .img {
@@ -12,10 +13,10 @@
   height: 34.5rem;
 }
 
-.h2{
+.h2 {
   font-size: 5rem;
   color: #80b918;
-  -webkit-text-stroke: 0.25rem white
+  -webkit-text-stroke: 0.25rem white;
 }
 
 .pokeball {

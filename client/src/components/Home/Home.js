@@ -17,14 +17,14 @@ function Home() {
   }, [dispatch]);
 
   const pokemons = ReactRedux.useSelector((state) => state.pokemons.pokemons);
-
+  
   const pokePage = () => {
     return pokemons.slice(currentPage, currentPage + 12);
   };
 
   return (
     <div>
-      <Filters setOrder={setOrder} />
+      {pokemons.length > 0 ? <Filters setOrder={setOrder} /> : <div></div>}
       <div className={style.pokemons}>
         {pokemons.length > 0 ? (
           pokePage().map((pok) => (
@@ -37,15 +37,19 @@ function Home() {
             />
           ))
         ) : (
-          <Loading className={style.poke}/>
+          <Loading className={style.poke} />
         )}
       </div>
-      <Pagination
-        pokemons={pokemons.length}
-        pokePage={pokePage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      {pokemons.length > 0 ? (
+        <Pagination
+          pokemons={pokemons.length}
+          pokePage={pokePage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

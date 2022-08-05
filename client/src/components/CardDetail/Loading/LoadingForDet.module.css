@@ -1,22 +1,29 @@
 .loadfdet {
   display: flex;
-  flex-direction: row;
-  /* align-items: center; */
+  align-items: center;
   gap: 10rem;
   background-color: #fcf6bd;
-  min-height: 94vh;
+  min-height: 93vh;
   justify-content: center;
 }
 
+.pika {
+  height: 35rem;
+  width: 30rem;
+}
+
 .pikachu {
-  height: 25rem;
-  width: 20rem;
-  padding-right: 10rem;
+  display: flex;
+  flex-direction: column;
+  height: 40rem;
+  width: 35rem;
+  justify-content: center;
+  align-items: center;
   animation: pika 1s linear infinite;
 }
 
 .h2 {
-  height: 15rem;
+  /* height: 15rem; */
   text-align: center;
   font-size: 6rem;
   color: #80b918;

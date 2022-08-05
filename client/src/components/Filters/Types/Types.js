@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { getTypes } from "../../../actions/typeActions";
 import * as ReactRedux from "react-redux";
 import { filterPokemons } from "../../../actions/allPokeActions";
-import style from "./Type.module.css";
+import style from "./Types.module.css";
 
 function Types() {
   const dispatch = ReactRedux.useDispatch();

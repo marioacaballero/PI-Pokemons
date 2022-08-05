@@ -109,6 +109,7 @@ function CardDetail(props) {
       ) : (
         <LoadingForDet />
       )}
+      {pokemon.length > 0 ? <div className={style.botDiv}></div> : <div></div>}
     </div>
   );
 }

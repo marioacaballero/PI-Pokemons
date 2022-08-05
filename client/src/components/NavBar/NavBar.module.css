@@ -12,6 +12,10 @@
   height: 3rem;
 }
 
+.pokemon:hover {
+  animation: pokem 1s linear infinite;
+}
+
 .create {
   display: flex;
   flex-direction: row;
@@ -20,7 +24,11 @@
   text-decoration: none;
 }
 
-.h3{
+.create:hover {
+  animation: newPoke 1s linear infinite;
+}
+
+.h3 {
   color: white;
   font-size: x-large;
   -webkit-text-stroke: 0.5px black;
@@ -29,4 +37,28 @@
 .newpoke {
   width: 3rem;
   height: 3rem;
+}
+
+@keyframes newPoke {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pokem {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

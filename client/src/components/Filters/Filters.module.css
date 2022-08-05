@@ -1,7 +1,7 @@
 .filters {
   display: flex;
   flex-direction: row;
-  background-color: var(--pokedex-bkg-out);
+  background-color: var(--pokedex-bkg-in);
   gap: 6rem;
   height: 2.9rem;
   width: 100%;
