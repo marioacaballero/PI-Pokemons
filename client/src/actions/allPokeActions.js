@@ -8,6 +8,7 @@ export const ORDER_POKEMONS = "ORDER_POKEMONS";
 export const FILTER_POKEMONS = "FILTER_POKEMONS";
 export const FILTER_POKEMONS2 = "FILTER_POKEMONS2";
 
+//action to set pokemons to redux state
 export const setPokemons = (data) => {
   return {
     type: SET_POKEMONS,
@@ -15,13 +16,19 @@ export const setPokemons = (data) => {
   };
 };
 
+// function to get pokemons from api and dispatch setPokemons
 export const getPokemons = () => {
   return async (dispatch) => {
-    const pokemons = await axios.get("http://localhost:3001/pokemons");
-    dispatch(setPokemons(pokemons.data));
+    try {
+      const pokemons = await axios.get("http://localhost:3001/pokemons");
+      dispatch(setPokemons(pokemons.data));
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 
+//action to clean the pokemon state on redux
 export const cleanPokemons = () => {
   return {
     type: CLEAN_POKEMONS,
@@ -29,6 +36,7 @@ export const cleanPokemons = () => {
   };
 };
 
+//action to set pokemon on redux state
 export const pokemonSearch = (data) => {
   return {
     type: POKEMON_SEARCH,
@@ -36,24 +44,30 @@ export const pokemonSearch = (data) => {
   };
 };
 
+//function to find one pokemon on api, if doesn't exist get alls
 export const getPokeSearch = (name) => {
   return async (dispatch) => {
-    if (name) {
-      const pokemon = await axios.get(
-        `http://localhost:3001/pokemons?name=${name}`
-      );
-      // console.log(pokemon.data);
-      if (pokemon.data.length > 0) {
-        return dispatch(pokemonSearch(pokemon.data));
+    try {
+      if (name) {
+        const pokemon = await axios.get(
+          `http://localhost:3001/pokemons?name=${name}`
+        );
+        // console.log(pokemon.data);
+        if (pokemon.data.length > 0) {
+          return dispatch(pokemonSearch(pokemon.data));
+        }
+        dispatch(getPokemons());
+        alert("Sorry!! Pokemon not found on API 😥, but.. YOU CAN ADD IT 😎!");
+      } else {
+        dispatch(getPokemons());
       }
-      dispatch(getPokemons());
-      alert("Sorry!! Pokemon not found on API 😥, but.. YOU CAN ADD IT 😎!");
-    } else {
-      dispatch(getPokemons());
+    } catch (error) {
+      console.log(error);
     }
   };
 };
 
+//action to set order on pokemon state
 export const orderPokemons = (data) => {
   return {
     type: ORDER_POKEMONS,
@@ -61,6 +75,7 @@ export const orderPokemons = (data) => {
   };
 };
 
+//action to do the first filter on pokemon state
 export const filterPokemons = (data) => {
   return {
     type: FILTER_POKEMONS,
@@ -68,6 +83,7 @@ export const filterPokemons = (data) => {
   };
 };
 
+//action to do the second filter on pokemon state
 export const filterPokemons2 = (data) => {
   return {
     type: FILTER_POKEMONS2,
