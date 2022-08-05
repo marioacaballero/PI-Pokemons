@@ -22,7 +22,7 @@ export const allPokeReducer = (state = INITIAL_STATE, { type, payload }) => {
         ...state,
         allPokemons: payload,
         pokemons: payload,
-        pokeTypes: payload,
+        // pokeTypes: payload,
       };
     }
     case CLEAN_POKEMONS: {
@@ -47,13 +47,13 @@ export const allPokeReducer = (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         pokemons: pokeFilter(state.allPokemons, payload),
-        pokeTypes: pokeFilter(state.allPokemons, payload),
+        // pokeTypes: pokeFilter(state.allPokemons, payload),
       };
     }
     case FILTER_POKEMONS2: {
       return {
         ...state,
-        pokemons: pokeFilter2(state.pokeTypes, payload),
+        pokemons: pokeFilter2(state.pokemons, payload, state.allPokemons),
       };
     }
     default: {

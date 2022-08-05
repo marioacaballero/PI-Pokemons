@@ -1,4 +1,5 @@
 export const pokeOrder = (pokemons, orderType) => {
+  //Switch to choose the action.payload (2nd argu) and sort the state array (1st argu) about that kind of action
   let pokeOrder = pokemons;
   switch (orderType) {
     case "nameAZ": {
@@ -55,22 +56,41 @@ export const pokeFilter = (pokemons, filterType) => {
   return pokeFilter;
 };
 
-export const pokeFilter2 = (pokemons2, filterType2) => {
-  let pokeFilter;
-  if (filterType2 === "API") {
-    pokeFilter = pokemons2.filter((poke) => !poke.createdOnDb);
-    if (pokeFilter.length === 0) {
+export const pokeFilter2 = (pokemons2, filterType2, pokemons) => {
+  // first argu = array to filter, 2nd argu = action.payload, 3rd argu = first filter array to compare
+  if (pokemons2.length !== pokemons.length) {
+    //If the compare length is dif, we have pokemons filter on the 3rd
+    let pokeFilter;
+    if (filterType2 === "API") {
+      pokeFilter = pokemons2.filter((poke) => !poke.createdOnDb);
+      if (pokeFilter.length === 0) {
+        pokeFilter = pokemons2;
+        alert("We don't have pokemons on API with that filter");
+      }
+    } else if (filterType2 === "DB") {
+      pokeFilter = pokemons2.filter((poke) => poke.createdOnDb);
+      if (pokeFilter.length === 0) {
+        pokeFilter = pokemons2;
+        alert("We don't have pokemons on DB with that filter");
+      }
+    } else {
       pokeFilter = pokemons2;
-      alert("We don't have pokemons on API with that filter");
     }
-  } else if (filterType2 === "DB") {
-    pokeFilter = pokemons2.filter((poke) => poke.createdOnDb);
-    if (pokeFilter.length === 0) {
-      pokeFilter = pokemons2;
-      alert("We don't have pokemons on DB with that filter");
-    }
+    return pokeFilter;
   } else {
-    pokeFilter = pokemons2;
+    //If not, we have the same length, so we have all pokemons without filter
+    let pokeFilter;
+    if (filterType2 === "API") {
+      pokeFilter = pokemons2.filter((poke) => !poke.createdOnDb);
+    } else if (filterType2 === "DB") {
+      pokeFilter = pokemons2.filter((poke) => poke.createdOnDb);
+      if (pokeFilter.length === 0) {
+        pokeFilter = pokemons2;
+        alert("We don't have pokemons on DB");
+      }
+    } else {
+      pokeFilter = pokemons2;
+    }
+    return pokeFilter;
   }
-  return pokeFilter;
 };
