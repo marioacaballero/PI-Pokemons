@@ -1,0 +1,52 @@
+.loadfdet {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  gap: 10rem;
+  background-color: #fcf6bd;
+  min-height: 94vh;
+  justify-content: center;
+}
+
+.pikachu {
+  height: 25rem;
+  width: 20rem;
+  padding-right: 10rem;
+  animation: pika 1s linear infinite;
+}
+
+.h2 {
+  height: 15rem;
+  text-align: center;
+  font-size: 6rem;
+  color: #80b918;
+  -webkit-text-stroke: 0.25rem white;
+}
+
+@keyframes pika {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* .load {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* .pokeball {
+  padding-top: 3rem;
+  height: 10rem;
+  width: 10rem;
+  animation-name: pokeball;
+  animation-timing-function: linear;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+} */
