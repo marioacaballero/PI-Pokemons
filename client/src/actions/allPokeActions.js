@@ -39,10 +39,15 @@ export const pokemonSearch = (data) => {
 export const getPokeSearch = (name) => {
   return async (dispatch) => {
     if (name) {
-      const pokemons = await axios.get(
+      const pokemon = await axios.get(
         `http://localhost:3001/pokemons?name=${name}`
       );
-      dispatch(pokemonSearch(pokemons.data));
+      // console.log(pokemon.data);
+      if (pokemon.data.length > 0) {
+        return dispatch(pokemonSearch(pokemon.data));
+      }
+      dispatch(getPokemons());
+      alert("Sorry!! Pokemon not found on API 😥, but.. YOU CAN ADD IT 😎!");
     } else {
       dispatch(getPokemons());
     }
