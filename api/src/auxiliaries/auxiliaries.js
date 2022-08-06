@@ -50,26 +50,32 @@ const pokemonsApi = async () => {
 // pokemonsApi();
 
 // 2th need to get all pokemons from db with all types for each
-
 const pokemonsDb = async () => {
-  return await Pokemon.findAll({
-    include: {
-      model: Type,
-      attributes: ["name", "img"],
-      through: {
-        attributes: [],
+  try {
+    return await Pokemon.findAll({
+      include: {
+        model: Type,
+        attributes: ["name", "img"],
+        through: {
+          attributes: [],
+        },
       },
-    },
-  });
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // 3rd concat all pokemons in one array
-
 const allPokemons = async () => {
-  const api = await pokemonsApi();
-  const db = await pokemonsDb();
+  try {
+    const api = await pokemonsApi();
+    const db = await pokemonsDb();
 
-  return api.concat(db);
+    return api.concat(db);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 module.exports = {
