@@ -18,21 +18,45 @@ module.exports = (sequelize) => {
       },
       hp: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 1,
+          max: 150,
+        },
       },
       attack: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 1,
+          max: 150,
+        },
       },
       defense: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 1,
+          max: 150,
+        },
       },
       speed: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 1,
+          max: 150,
+        },
       },
       height: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 1,
+          max: 200,
+        },
       },
       weigth: {
         type: DataTypes.INTEGER,
+        validate: {
+          min: 1,
+          max: 9999,
+        },
       },
       img: {
         type: DataTypes.STRING,
