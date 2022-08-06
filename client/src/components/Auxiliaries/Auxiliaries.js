@@ -30,16 +30,16 @@ export const handleValidate = (pokemon) => {
   }
 
   if (
-    Number(pokemon.hp) >= 300 ||
+    Number(pokemon.hp) >= 150 ||
     Number(pokemon.hp) <= 0 ||
-    Number(pokemon.attack) >= 300 ||
+    Number(pokemon.attack) >= 150 ||
     Number(pokemon.attack) <= 0 ||
-    Number(pokemon.defense) >= 300 ||
+    Number(pokemon.defense) >= 150 ||
     Number(pokemon.defense) <= 0 ||
-    Number(pokemon.speed) >= 300 ||
+    Number(pokemon.speed) >= 150 ||
     Number(pokemon.speed) <= 0
   ) {
-    return (error = "HP, ATTACK, DEFENSE AND SPEED must be between 0 and 300");
+    return (error = "HP, ATTACK, DEFENSE AND SPEED must be between 0 and 150");
   }
 
   if (pokemon.weight >= 9999 || pokemon.weight <= 0) {

@@ -55,7 +55,7 @@ function CardCreate(props) {
       dispatch(cleanPokemons);
       setTimeout(() => {
         props.history.push("/home");
-      }, 6000);
+      }, 3000);
     } else {
       alert(handleValidate(pokemon)); //show alert if error validate exist
     }
