@@ -44,15 +44,15 @@ export const newPokemon = (data) => {
     types = ["unknown"];
   }
 
-  //then create the new pokemon with the data
+  //then create the new pokemon with the data checking the correct form
   const newPok = {
-    name: data.name,
-    hp: data.hp,
-    attack: data.attack,
-    defense: data.defense,
-    speed: data.speed,
-    height: data.height,
-    weigth: data.weigth,
+    name: data.name.toLowerCase(),
+    hp: Math.floor(data.hp),
+    attack: Math.floor(data.attack),
+    defense: Math.floor(data.defense),
+    speed: Math.floor(data.speed),
+    height: Math.floor(data.height),
+    weigth: Math.floor(data.weigth),
     img: data.img,
     types,
   };

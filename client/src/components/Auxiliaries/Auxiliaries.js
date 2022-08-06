@@ -1,3 +1,54 @@
 export const capFirstLet = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
+
+//create a handle validator to set erros
+export const handleValidate = (pokemon) => {
+  //some validator to prevent post on db with errors
+  let notNull = /\S+/; //prevent null
+  let notNumber = /^[A-Za-z]+$/; //only alphabetics characters
+  let error = "";
+  
+  if (!notNull.test(pokemon.name)) {
+    return (error = "Name cannot be null");
+  }
+
+  if (!notNumber.test(pokemon.name)) {
+    return (error = "Name must be a string");
+  }
+
+  if (pokemon.firstT === "" && pokemon.secondT === "") {
+    return (error = "One type is required");
+  }
+
+  if (
+    pokemon.firstT !== "" &&
+    pokemon.secondT !== "" &&
+    pokemon.secondT === pokemon.firstT
+  ) {
+    return (error = "The type cannot repeat");
+  }
+
+  if (
+    Number(pokemon.hp) >= 300 ||
+    Number(pokemon.hp) <= 0 ||
+    Number(pokemon.attack) >= 300 ||
+    Number(pokemon.attack) <= 0 ||
+    Number(pokemon.defense) >= 300 ||
+    Number(pokemon.defense) <= 0 ||
+    Number(pokemon.speed) >= 300 ||
+    Number(pokemon.speed) <= 0
+  ) {
+    return (error = "HP, ATTACK, DEFENSE AND SPEED must be between 0 and 300");
+  }
+
+  if (pokemon.weight >= 9999 || pokemon.weight <= 0) {
+    return (error = "WEIGHT must be between 0 and 9999");
+  }
+
+  if (pokemon.height >= 200 || pokemon.height <= 0) {
+    return (error = "HEIGHT must be between 0 and 200");
+  }
+
+  return error;
+};

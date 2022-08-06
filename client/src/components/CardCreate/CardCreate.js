@@ -3,14 +3,11 @@ import * as ReactRedux from "react-redux";
 import { cleanPokemons } from "../../actions/allPokeActions";
 import { newPokemon } from "../../actions/pokeActions";
 import { getTypes } from "../../actions/typeActions";
-import { capFirstLet } from "../Auxiliaries/Auxiliaries";
+import { handleValidate } from "../Auxiliaries/Auxiliaries";
 import style from "./CardCreate.module.css";
 
-function CardCreate() {
+function CardCreate(props) {
   const dispatch = ReactRedux.useDispatch();
-  //some validator to prevent post on db with errors
-  let notNull = /\S+/;
-  let notNumber = /[a-z]/;
 
   const initialState = {
     name: "",
@@ -25,7 +22,6 @@ function CardCreate() {
     secondT: "",
   };
 
-  let [error, setError] = useState("");
   const [pokemon, setPokemon] = useState(initialState);
 
   useEffect(() => {
@@ -33,40 +29,35 @@ function CardCreate() {
   }, [dispatch]);
 
   const allTypes = ReactRedux.useSelector((state) => state.types.types);
-
-  //create a handle validator to set erros
-  const handleValidate = (pokemon) => {
-    if (!notNull.test(pokemon.name)) {
-      error = "Name cannot be null";
-    }
-    if (!notNumber.test(pokemon.name)) {
-      error = "Name must be a string";
-    }
-    return error;
-  };
+  const pokemons = ReactRedux.useSelector((state) => state.pokemons.pokemons);
 
   const handleInputChange = (event) => {
+    event.preventDefault();
+
     setPokemon({
       ...pokemon,
       [event.target.name]: event.target.value,
     });
-    setError(
-      handleValidate({
-        ...pokemon,
-        [event.target.name]: event.target.value,
-      })
-    );
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!error) {
+
+    const poke = pokemons.filter((pok) => pok.name === pokemon.name);
+    if (poke.length > 0) {
+      return alert("Pokemon name already exist");
+    }
+
+    if (!handleValidate(pokemon)) {
+      //check if pokemon pass the validate
       dispatch(newPokemon(pokemon));
       setPokemon(initialState);
       dispatch(cleanPokemons);
+      setTimeout(() => {
+        props.history.push("/home");
+      }, 6000);
     } else {
-      alert(error); //show alert if error validate exist and set errors to ''
-      setError("");
+      alert(handleValidate(pokemon)); //show alert if error validate exist
     }
   };
 
@@ -82,7 +73,7 @@ function CardCreate() {
           />
           <input
             name="img"
-            type={"text"}
+            type="text"
             value={pokemon.img}
             onChange={(e) => handleInputChange(e)}
             placeholder="PUT YOUR URL IMAGE HERE..."
@@ -112,7 +103,7 @@ function CardCreate() {
             </label>
             <div className={style.divTypes}>
               <select name="firstT" onChange={(e) => handleInputChange(e)}>
-                <option>FIRST TYPE</option>
+                <option value="">FIRST TYPE</option>
                 {allTypes &&
                   allTypes.map((typ) => (
                     <option key={typ.id} name={typ.name} value={typ.name}>
@@ -121,7 +112,7 @@ function CardCreate() {
                   ))}
               </select>
               <select name="secondT" onChange={(e) => handleInputChange(e)}>
-                <option>SECOND TYPE</option>
+                <option value="">SECOND TYPE</option>
                 {allTypes &&
                   allTypes.map((typ) => (
                     <option key={typ.id} name={typ.name} value={typ.name}>
@@ -140,7 +131,7 @@ function CardCreate() {
             </label>
             <input
               name="hp"
-              type={"number"}
+              type="number"
               value={pokemon.hp}
               onChange={(e) => handleInputChange(e)}
             />
@@ -154,7 +145,7 @@ function CardCreate() {
             </label>
             <input
               name="attack"
-              type={"number"}
+              type="number"
               value={pokemon.attack}
               onChange={(e) => handleInputChange(e)}
             />
@@ -168,7 +159,7 @@ function CardCreate() {
             </label>
             <input
               name="defense"
-              type={"number"}
+              type="number"
               value={pokemon.defense}
               onChange={(e) => handleInputChange(e)}
             />
@@ -182,7 +173,7 @@ function CardCreate() {
             </label>
             <input
               name="speed"
-              type={"number"}
+              type="number"
               value={pokemon.speed}
               onChange={(e) => handleInputChange(e)}
             />
@@ -197,7 +188,7 @@ function CardCreate() {
             </label>
             <input
               name="weigth"
-              type={"number"}
+              type="number"
               value={pokemon.weigth}
               onChange={(e) => handleInputChange(e)}
             />
@@ -211,7 +202,7 @@ function CardCreate() {
             </label>
             <input
               name="height"
-              type={"number"}
+              type="number"
               value={pokemon.height}
               onChange={(e) => handleInputChange(e)}
             />
