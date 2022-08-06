@@ -51,7 +51,7 @@ module.exports = (sequelize) => {
           max: 200,
         },
       },
-      weigth: {
+      weight: {
         type: DataTypes.INTEGER,
         validate: {
           min: 1,

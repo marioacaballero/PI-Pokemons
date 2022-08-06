@@ -54,37 +54,83 @@ router.get("/:id", async (req, res) => {
 
 //create new pokemon
 router.post("/", async (req, res) => {
-  const { name, hp, attack, defense, speed, heigth, weigth, img, types } =
+  const { name, hp, attack, defense, speed, height, weight, img, types } =
     req.body;
-
   try {
+    if (
+      !name ||
+      !hp ||
+      !attack ||
+      !defense ||
+      !speed ||
+      !height ||
+      !weight ||
+      !types
+    ) {
+      return res.status(404).send("Some dates are missing");
+    }
+
     if (name) {
       //get all pokemons and check if the name passed exist
       const allPokes = await allPokemons();
       const pokemon = allPokes.find((pok) => pok.name === name.toLowerCase());
       if (!pokemon) {
-        //if not create the new pokemon
+        //if not check the stats
+        if (!types.length) {
+          return res.status(404).send("One type is required");
+        }
+
+        if (types.length === 2) {
+          if (types[0] === types[1]) {
+            return res.status(404).send("The type cannot repeat");
+          }
+        }
+
+        if (
+          hp >= 150 ||
+          hp <= 0 ||
+          attack >= 150 ||
+          attack <= 0 ||
+          defense >= 150 ||
+          defense <= 0 ||
+          speed >= 150 ||
+          speed <= 0
+        ) {
+          return res
+            .status(404)
+            .send("HP, ATTACK, DEFENSE AND SPEED must be between 0 and 150");
+        }
+
+        if (weight >= 9999 || weight <= 0) {
+          return res.status(404).send("WEIGHT must be between 0 and 9999");
+        }
+
+        if (height >= 200 || height <= 0) {
+          return res.status(404).send("HEIGHT must be between 0 and 200");
+        }
+
+        //and then create the pokemon if all pass
         const newPokemon = await Pokemon.create({
           name,
           hp,
           attack,
           defense,
           speed,
-          heigth,
-          weigth,
+          height,
+          weight,
           img,
         });
 
         //then add types the types incoming from body to the new pokemon
-        if (types) {
-          const newPokTyp = await Type.findAll({
-            where: {
-              name: types,
-            },
-          });
+        // if (types) {
+        const newPokTyp = await Type.findAll({
+          where: {
+            name: types,
+          },
+        });
 
-          newPokemon.addType(newPokTyp);
-        }
+        await newPokemon.addType(newPokTyp);
+        // }
         return res.status(201).json(newPokemon); //and send it
       }
       //if name exist send the 404
