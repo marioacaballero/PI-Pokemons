@@ -45,6 +45,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
           className={styles.btnT}
           style={{ display: styPrev() }}
           onMouseDown={handleSound}
+          onMouseEnter={handleSound}
         >
           PREV
         </button>
@@ -56,6 +57,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
             onClick={() => changeTo(num)}
             className={styles.number}
             onMouseDown={handleSound}
+            onMouseEnter={handleSound}
           >
             {num}
           </button>
@@ -67,6 +69,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
           className={styles.btnB}
           style={{ display: styNext() }}
           onMouseDown={handleSound}
+          onMouseEnter={handleSound}
         >
           NEXT
         </button>

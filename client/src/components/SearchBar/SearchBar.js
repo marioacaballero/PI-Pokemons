@@ -28,7 +28,12 @@ function SearchBar() {
         onChange={handleInputChange}
         className={style.input}
       />
-      <button type={"submit"} className={style.btn} onMouseDown={handleSound}>
+      <button
+        type={"submit"}
+        className={style.btn}
+        onMouseDown={handleSound}
+        onMouseEnter={handleSound}
+      >
         <img src={poke} alt="pokeball" className={style.find} />
       </button>
     </form>

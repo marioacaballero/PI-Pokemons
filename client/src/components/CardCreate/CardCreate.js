@@ -118,6 +118,7 @@ function CardCreate(props) {
                 name="firstT"
                 onChange={(e) => handleInputChange(e)}
                 onMouseDown={handleSound}
+                onMouseEnter={handleSound}
               >
                 <option value="">FIRST TYPE</option>
                 {allTypes &&
@@ -131,6 +132,7 @@ function CardCreate(props) {
                 name="secondT"
                 onChange={(e) => handleInputChange(e)}
                 onMouseDown={handleSound}
+                onMouseEnter={handleSound}
               >
                 <option value="">SECOND TYPE</option>
                 {allTypes &&
@@ -230,7 +232,12 @@ function CardCreate(props) {
         </section>
       </div>
       <div className={style.divButton}>
-        <button type={"submit"} className={style.btn} onMouseDown={handleSound}>
+        <button
+          type={"submit"}
+          className={style.btn}
+          onMouseDown={handleSound}
+          onMouseEnter={handleSound}
+        >
           <h4>
             <h4>LET'S GO!</h4>
             <h5></h5>

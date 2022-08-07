@@ -9,13 +9,14 @@ import { handleSound } from "../Auxiliaries/Auxiliaries";
 function NavBar(props) {
   return (
     <div className={paths(props.location.pathname)}>
-      <Link to={"/home"} onMouseDown={handleSound}>
+      <Link to={"/home"} onMouseDown={handleSound} onMouseEnter={handleSound}>
         <img alt="pokemon" src={pokemon} className={style.pokemon} />
       </Link>
       <Link
         to={"/home/newpokemon"}
         className={style.create}
         onMouseDown={handleSound}
+        onMouseEnter={handleSound}
       >
         <h3 className={style.h3}>NEW</h3>
         <img alt="newPoke" src={newpoke} className={style.newpoke} />

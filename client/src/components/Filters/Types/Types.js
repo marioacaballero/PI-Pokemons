@@ -21,7 +21,7 @@ function Types() {
 
   return (
     <div className={style.mainDiv}>
-      <select onMouseDown={handleSound}>
+      <select onMouseDown={handleSound} onMouseEnter={handleSound}>
         <option>TYPES</option>
         <option
           value="all"

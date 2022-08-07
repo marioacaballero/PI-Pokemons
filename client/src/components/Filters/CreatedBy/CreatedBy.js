@@ -12,7 +12,7 @@ function CreatedBy() {
   };
   return (
     <div className={style.mainDiv}>
-      <select onMouseDown={handleSound}>
+      <select onMouseDown={handleSound} onMouseEnter={handleSound}>
         <option> ORIGIN </option>
         <option
           value="all"

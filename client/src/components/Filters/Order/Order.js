@@ -14,7 +14,7 @@ function Order({ setOrder }) {
   };
   return (
     <div className={style.mainDiv}>
-      <select onMouseDown={handleSound}>
+      <select onMouseDown={handleSound} onMouseEnter={handleSound}>
         <option
           value=""
           onClick={(event) => {

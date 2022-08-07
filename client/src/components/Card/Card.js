@@ -18,6 +18,7 @@ function Card({ name, img, id, types, history }) {
       className={style.card}
       onClick={() => history.push(`home/pokemon/${id}`)}
       onMouseDown={handleSound}
+      onMouseEnter={handleSound}
     >
       <div className={typ(types)}>
         <div className={style.link}>{name.toUpperCase()}</div>
