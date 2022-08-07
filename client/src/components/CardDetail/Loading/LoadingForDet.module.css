@@ -24,6 +24,7 @@
 
 .h2 {
   /* height: 15rem; */
+  display: none;
   text-align: center;
   font-size: 6rem;
   color: #80b918;

@@ -1,4 +1,5 @@
 import React from "react";
+import { handleSound } from "../Auxiliaries/Auxiliaries";
 import styles from "./Pagination.module.css";
 
 function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
@@ -43,6 +44,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
           onClick={previous}
           className={styles.btnT}
           style={{ display: styPrev() }}
+          onMouseDown={handleSound}
         >
           PREV
         </button>
@@ -53,6 +55,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
             key={num}
             onClick={() => changeTo(num)}
             className={styles.number}
+            onMouseDown={handleSound}
           >
             {num}
           </button>
@@ -63,6 +66,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
           onClick={next}
           className={styles.btnB}
           style={{ display: styNext() }}
+          onMouseDown={handleSound}
         >
           NEXT
         </button>

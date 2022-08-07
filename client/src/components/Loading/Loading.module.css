@@ -14,12 +14,14 @@
 }
 
 .h2 {
+  display: none;
   font-size: 5rem;
   color: #80b918;
   -webkit-text-stroke: 0.25rem white;
 }
 
 .pokeball {
+  padding-left: 10rem;
   height: 15rem;
   width: 15rem;
   animation: spin 1s linear infinite;

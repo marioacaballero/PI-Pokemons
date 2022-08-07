@@ -1,6 +1,7 @@
 import React from "react";
 import * as ReactRedux from "react-redux";
 import { orderPokemons } from "../../../actions/allPokeActions";
+import { handleSound } from "../../Auxiliaries/Auxiliaries";
 import style from './Order.module.css';
 
 function Order({ setOrder }) {
@@ -13,7 +14,7 @@ function Order({ setOrder }) {
   };
   return (
     <div className={style.mainDiv}>
-      <select>
+      <select onMouseDown={handleSound}>
         <option
           value=""
           onClick={(event) => {

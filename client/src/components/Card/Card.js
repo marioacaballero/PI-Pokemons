@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import style from "./Card.module.css";
 import { typ } from "./CSS Types/auxiliar";
 import pokeball from "../Imgs/pokeball3.png";
+import { handleSound } from "../Auxiliaries/Auxiliaries";
 
-function Card({ name, img, id, types }) {
+function Card({ name, img, id, types, history }) {
   let newId;
 
   if (typeof id === "number") {
@@ -14,11 +14,13 @@ function Card({ name, img, id, types }) {
   }
 
   return (
-    <div className={style.card}>
+    <div
+      className={style.card}
+      onClick={() => history.push(`home/pokemon/${id}`)}
+      onMouseDown={handleSound}
+    >
       <div className={typ(types)}>
-        <Link className={style.link} to={`/home/pokemon/${id}`}>
-          {name.toUpperCase()}
-        </Link>
+        <div className={style.link}>{name.toUpperCase()}</div>
         <h2 className={style.h2}>#{newId}</h2>
       </div>
       <div className={style.divImg}>

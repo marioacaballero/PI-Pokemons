@@ -3,6 +3,7 @@ import * as ReactRedux from "react-redux";
 import { cleanPokemons, getPokeSearch } from "../../actions/allPokeActions";
 import style from "./SearchBar.module.css";
 import poke from "../Imgs/pokeball2.png";
+import { handleSound } from "../Auxiliaries/Auxiliaries";
 
 function SearchBar() {
   const [search, setSearch] = useState("");
@@ -27,7 +28,7 @@ function SearchBar() {
         onChange={handleInputChange}
         className={style.input}
       />
-      <button type={"submit"} className={style.btn}>
+      <button type={"submit"} className={style.btn} onMouseDown={handleSound}>
         <img src={poke} alt="pokeball" className={style.find} />
       </button>
     </form>

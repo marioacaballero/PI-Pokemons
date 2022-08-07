@@ -12,9 +12,39 @@
 }
 
 .divB {
+  /* position: relative; */
   min-height: 44vh;
   background-color: #43aa8b;
   width: 100%;
+}
+
+.divB > span {
+  position: absolute;
+  text-transform: uppercase;
+  display: block;
+  top: 50%;
+  left: 5%;
+  width: 44ch;
+  color: white;
+  text-align: left;
+  font-size: xx-large;
+  font-weight: 700;
+  white-space: nowrap;
+  border-right: 4px solid;
+  animation: typing 5s steps(52), blink 0.5s infinite step-end alternate;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .divC {
@@ -47,7 +77,7 @@
 
 .pokemon {
   position: absolute;
-  left: 10%;
+  left: 15%;
   top: 5%;
   width: 750px; /*582 x 282*/
   height: 300px;

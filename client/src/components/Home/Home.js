@@ -7,7 +7,7 @@ import Loading from "../Loading/Loading";
 import Pagination from "../Pagination/Pagination";
 import style from "./Home.module.css";
 
-function Home() {
+function Home(props) {
   const dispatch = ReactRedux.useDispatch();
   const [currentPage, setCurrentPage] = useState(0);
   const [order, setOrder] = useState("");
@@ -34,6 +34,7 @@ function Home() {
               img={pok.img}
               id={pok.id}
               types={pok.types}
+              history={props.history}
             />
           ))
         ) : (

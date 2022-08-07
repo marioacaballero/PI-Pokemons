@@ -1,6 +1,7 @@
 import React from "react";
 import * as ReactRedux from "react-redux";
 import { filterPokemons2 } from "../../../actions/allPokeActions";
+import { handleSound } from "../../Auxiliaries/Auxiliaries";
 import style from "./CreatedBy.module.css";
 
 function CreatedBy() {
@@ -11,7 +12,7 @@ function CreatedBy() {
   };
   return (
     <div className={style.mainDiv}>
-      <select>
+      <select onMouseDown={handleSound}>
         <option> ORIGIN </option>
         <option
           value="all"

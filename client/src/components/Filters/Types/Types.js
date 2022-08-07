@@ -3,6 +3,7 @@ import { getTypes } from "../../../actions/typeActions";
 import * as ReactRedux from "react-redux";
 import { filterPokemons } from "../../../actions/allPokeActions";
 import style from "./Types.module.css";
+import { handleSound } from "../../Auxiliaries/Auxiliaries";
 
 function Types() {
   const dispatch = ReactRedux.useDispatch();
@@ -20,7 +21,7 @@ function Types() {
 
   return (
     <div className={style.mainDiv}>
-      <select>
+      <select onMouseDown={handleSound}>
         <option>TYPES</option>
         <option
           value="all"

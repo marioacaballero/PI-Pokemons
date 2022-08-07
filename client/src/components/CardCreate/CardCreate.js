@@ -3,7 +3,10 @@ import * as ReactRedux from "react-redux";
 import { cleanPokemons } from "../../actions/allPokeActions";
 import { newPokemon } from "../../actions/pokeActions";
 import { getTypes } from "../../actions/typeActions";
-import { handleValidate } from "../Auxiliaries/Auxiliaries";
+import {
+  handleSound,
+  handleValidate /* validators */,
+} from "../Auxiliaries/Auxiliaries";
 import style from "./CardCreate.module.css";
 
 function CardCreate(props) {
@@ -22,6 +25,7 @@ function CardCreate(props) {
     secondT: "",
   };
 
+  // const [errors, setErrors] = useState({});
   const [pokemon, setPokemon] = useState(initialState);
 
   useEffect(() => {
@@ -33,6 +37,13 @@ function CardCreate(props) {
 
   const handleInputChange = (event) => {
     event.preventDefault();
+
+    // setErrors(
+    //   validators({
+    //     ...pokemon,
+    //     [event.target.name]: event.target.value,
+    //   })
+    // );
 
     setPokemon({
       ...pokemon,
@@ -93,6 +104,7 @@ function CardCreate(props) {
               value={pokemon.name}
               onChange={(e) => handleInputChange(e)}
             />
+            {/* {errors.name && alert(errors.name)} */}
           </div>
           <div>
             <label>
@@ -102,7 +114,11 @@ function CardCreate(props) {
               </h4>
             </label>
             <div className={style.divTypes}>
-              <select name="firstT" onChange={(e) => handleInputChange(e)}>
+              <select
+                name="firstT"
+                onChange={(e) => handleInputChange(e)}
+                onMouseDown={handleSound}
+              >
                 <option value="">FIRST TYPE</option>
                 {allTypes &&
                   allTypes.map((typ) => (
@@ -111,7 +127,11 @@ function CardCreate(props) {
                     </option>
                   ))}
               </select>
-              <select name="secondT" onChange={(e) => handleInputChange(e)}>
+              <select
+                name="secondT"
+                onChange={(e) => handleInputChange(e)}
+                onMouseDown={handleSound}
+              >
                 <option value="">SECOND TYPE</option>
                 {allTypes &&
                   allTypes.map((typ) => (
@@ -210,7 +230,7 @@ function CardCreate(props) {
         </section>
       </div>
       <div className={style.divButton}>
-        <button type={"submit"} className={style.btn}>
+        <button type={"submit"} className={style.btn} onMouseDown={handleSound}>
           <h4>
             <h4>LET'S GO!</h4>
             <h5></h5>
