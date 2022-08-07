@@ -38,8 +38,9 @@ const pokemonsApi = async () => {
 
       apiPokemons.push(...apiRespModif);
       next = apiResp.data.next;
-    } while (next != null && apiPokemons.length < 150); //with apiPokemons.length I can take the limits of the pokemons to get with 20 to 20 for time.
+    } while (next != null && apiPokemons.length < 40); //with apiPokemons.length I can take the limits of the pokemons to get with 20 to 20 for time.
     // console.log(apiPokemons);
+
     if (apiPokemons.length > 150) {
       return apiPokemons.slice(0, 150);
     }
@@ -51,6 +52,46 @@ const pokemonsApi = async () => {
 };
 
 // pokemonsApi();
+
+// const pokemonsApi2 = async () => {
+//   //first take the api response
+//   try {
+//     let apiResp = await axios.get(
+//       "https://pokeapi.co/api/v2/pokemon/?limit=150"
+//     );
+//     // console.log(apiResp.data);
+
+//     let apiRespModif = await Promise.all(
+//       apiResp.data.results.map(async (pok) => {
+//         let pokemon = await axios.get(pok.url);
+//         return {
+//           id: pokemon.data.id,
+//           name: pokemon.data.name,
+//           img: pokemon.data.sprites.other["official-artwork"].front_default,
+//           types: pokemon.data.types.map((typ) => {
+//             return {
+//               name: typ.type.name,
+//               img: `https://typedex.app/images/ui/types/dark/${typ.type.name}.svg`,
+//             };
+//           }),
+//           hp: pokemon.data.stats[0].base_stat,
+//           attack: pokemon.data.stats[1].base_stat,
+//           defense: pokemon.data.stats[2].base_stat,
+//           speed: pokemon.data.stats[5].base_stat,
+//           height: pokemon.data.height,
+//           weight: pokemon.data.weight,
+//         };
+//       })
+//     );
+
+//     // console.log(apiRespModif);
+//     return apiRespModif;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// pokemonsApi2();
 
 // 2th need to get all pokemons from db with all types for each
 const pokemonsDb = async () => {
@@ -81,6 +122,7 @@ const allPokemons = async () => {
   }
 };
 
+// console.log(allPokemons())
 module.exports = {
   allPokemons,
 };
