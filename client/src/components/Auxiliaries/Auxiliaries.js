@@ -25,8 +25,8 @@ export const handleValidate = (pokemon) => {
     return (error = "Name must be a string");
   }
 
-  if (pokemon.firstT === "" && pokemon.secondT === "") {
-    return (error = "One type is required");
+  if (pokemon.firstT === "") {
+    return (error = "The first type is required");
   }
 
   if (

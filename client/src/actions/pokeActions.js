@@ -38,8 +38,11 @@ export const newPokemon = (data) => {
   let types;
 
   //first check if data contain the types and set into the types array
-  if (data.firstT || data.secondT) {
-    types = [data.firstT, data.secondT];
+  if (data.firstT) {
+    if (data.secondT) {
+      types = [data.firstT.toLowerCase(), data.secondT.toLowerCase()];
+    }
+    types = [data.firstT.toLowerCase()];
   } else {
     types = ["unknown"];
   }
@@ -52,7 +55,7 @@ export const newPokemon = (data) => {
     defense: Math.floor(data.defense),
     speed: Math.floor(data.speed),
     height: Math.floor(data.height),
-    weigth: Math.floor(data.weigth),
+    weight: Math.floor(data.weight),
     img: data.img,
     types,
   };

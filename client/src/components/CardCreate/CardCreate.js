@@ -19,7 +19,7 @@ function CardCreate(props) {
     defense: 0,
     speed: 0,
     height: 0,
-    weigth: 0,
+    weight: 0,
     img: "",
     firstT: "",
     secondT: "",
@@ -209,9 +209,9 @@ function CardCreate(props) {
               </h4>
             </label>
             <input
-              name="weigth"
+              name="weight"
               type="number"
-              value={pokemon.weigth}
+              value={pokemon.weight}
               onChange={(e) => handleInputChange(e)}
             />
           </div>

@@ -26,7 +26,9 @@
 }
 
 .secImg {
-  background-color: #f1fffa;
+  /* background-color: #f1fffa; */
+  background: linear-gradient(to top, #edede9 70%, white 30%);
+  background-size: 100% 10px;
   border: 1rem solid #d295bf;
 }
 
