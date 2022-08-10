@@ -5,6 +5,7 @@ import { handleSound } from "../Auxiliaries/Auxiliaries";
 import style from "./CardDetail.module.css";
 import LoadingForDet from "./Loading/LoadingForDet";
 import wild from "../Music/Pokemon FireRedLeafGreen Wild Pokemon Encounter.mp3";
+import { typ } from "../Card copy/CSS Types/auxiliar";
 
 function CardDetail(props) {
   const id = props.match.params.id;
@@ -58,9 +59,14 @@ function CardDetail(props) {
                 <div className={style.h5m}></div>
               </div>
               <p onMouseEnter={handleSound}>
-                {pokemon[0].types
-                  .map((typ) => typ.name.toUpperCase())
-                  .join(" ")}
+                {
+                  pokemon[0].types.map((ty, i) => (
+                    <span key={i} className={typ(ty.name)}>
+                      {ty.name.toUpperCase()}
+                    </span>
+                  ))
+                  // .join(" ")
+                }
               </p>
               {/* {pokemon[0].types.map((typ, i) => (
                 <img

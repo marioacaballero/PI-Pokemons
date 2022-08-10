@@ -3,7 +3,7 @@ import style from "./LandingPage.module.css";
 import charizard from "../Imgs/CharizarRF.png";
 import pokemon from "../Imgs/pokemon2.png";
 import intro from "../Music/FRIntro.mp3";
-import { handleSound } from "../Auxiliaries/Auxiliaries";
+import { handleMuted, handleSound } from "../Auxiliaries/Auxiliaries";
 
 function LandingPage(props) {
   function handleClick() {
@@ -16,7 +16,11 @@ function LandingPage(props) {
         <source src={intro} type="audio/mpeg" />
       </audio>
       <div className={style.divA}>
-        <div className={style.divRedTop}></div>
+        <div className={style.divRedTop}>
+          <button className={style.btnMuted} onClick={handleMuted}>
+            🎶
+          </button>
+        </div>
       </div>
       <div className={style.divB}>
         <img alt="pokemon" src={pokemon} className={style.pokemon} />

@@ -12,6 +12,7 @@
   border-radius: 9999px;
   border: transparent;
   cursor: pointer;
+  background-color: #b175ea;
 }
 
 .btnMuted:hover {
