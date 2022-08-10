@@ -46,3 +46,25 @@
     transform: scale(1);
   }
 }
+
+@media (max-width: 820px) {
+  .sear{
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sear{
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .sear{
+    padding-left: 0;
+  }
+
+  .input{
+    width: 18.5rem;
+  }
+}

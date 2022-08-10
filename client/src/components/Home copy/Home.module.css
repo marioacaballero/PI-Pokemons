@@ -1,8 +1,20 @@
+.box {
+  width: 100%;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-attachment: scroll;
+  background-color: var(--pokedex-bkg-in);
+}
+
 .pokemons {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: repeat(6, 1fr); */
+  justify-content: center;
   gap: 2rem;
   row-gap: 2rem;
   padding: 2rem;
@@ -12,5 +24,27 @@
 
 .poke {
   position: fixed;
-  left: 50%
+  left: 50%;
+}
+
+/*////////////////////////////////////////////////////////////////*/
+
+@media (max-width: 820px) {
+  .poke {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pokemons {
+    gap: 1rem;
+    row-gap: 1rem;
+    padding: 1rem;
+  }
+
+  .poke {
+    align-items: center;
+    justify-content: center;
+  }
 }

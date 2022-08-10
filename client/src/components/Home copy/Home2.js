@@ -23,7 +23,7 @@ function Home(props) {
   };
 
   return (
-    <div>
+    <div className={style.box}>
       {pokemons.length > 0 ? <Filters setOrder={setOrder} /> : <div></div>}
       <div className={style.pokemons}>
         {pokemons.length > 0 ? (

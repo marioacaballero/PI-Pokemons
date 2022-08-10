@@ -58,3 +58,54 @@
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
 } */
+
+@media (max-width: 820px) {
+  .loadfdet {
+    align-items: flex-start;
+    padding-top: 5rem;
+  }
+
+  .pikachu {
+    height: 25rem;
+    width: 20rem;
+  }
+
+  .pika {
+    height: 20rem;
+    width: 15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loadfdet {
+    align-items: flex-start;
+    padding-top: 5rem;
+  }
+
+  .pikachu {
+    height: 25rem;
+    width: 20rem;
+  }
+
+  .pika {
+    height: 20rem;
+    width: 15rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .loadfdet {
+    align-items: flex-start;
+    padding-top: 5rem;
+  }
+
+  .pikachu {
+    height: 25rem;
+    width: 20rem;
+  }
+
+  .pika {
+    height: 20rem;
+    width: 15rem;
+  }
+}

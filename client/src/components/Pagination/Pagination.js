@@ -12,6 +12,12 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
     setCurrentPage((number - 1) * 12);
   };
 
+  const page = (num) => {
+    if (currentPage / 12 === num - 1) {
+      return "#f13a3a";
+    }
+  };
+
   const next = () => {
     if (pokePage().length % 12 === 0) {
       setCurrentPage(currentPage + 12);
@@ -24,13 +30,13 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
     }
   };
 
-  //Estilo
+  //Style btn
   const styPrev = () => {
     if (currentPage === 0) {
       return "none";
     }
   };
-  //Estilo
+  //Style btn
   const styNext = () => {
     if (pokePage().length % 12 !== 0) {
       return "none";
@@ -56,6 +62,7 @@ function Pagination({ currentPage, setCurrentPage, pokePage, pokemons }) {
             key={num}
             onClick={() => changeTo(num)}
             className={styles.number}
+            style={{ backgroundColor: page(num) }}
             onMouseDown={handleSound}
             onMouseEnter={handleSound}
           >

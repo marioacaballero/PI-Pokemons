@@ -67,14 +67,14 @@ h2 {
 }
 
 .img {
-  width: 11rem;
-  height: 11rem;
+  width: 10rem;
+  height: 10rem;
 }
 
 .extUp,
 .extDown {
   border: 1px solid #d295bf;
-  width: 12rem;
+  width: 11rem;
   height: 2rem;
   display: flex;
   flex-direction: row;

@@ -50,3 +50,11 @@
   background-color: #606c38;
   color: var(--pokedex-bkg-in);
 }
+
+
+@media (max-width: 480px) {
+  .btnB,
+  .btnT {
+    display: none;
+  }
+}

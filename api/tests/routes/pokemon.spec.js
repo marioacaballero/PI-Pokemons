@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const { expect } = require("chai");
+// const { expect } = require("chai");
 const session = require("supertest-session");
 const app = require("../../src/app.js");
 const { Pokemon, conn } = require("../../src/db.js");
@@ -34,7 +34,7 @@ describe("Pokemon routes", () => {
   });
 
   describe("POST /pokemons", () => {
-    it("should get 200 if pokemon created", (done) => {
+    it("should get 201 if pokemon created", (done) => {
       agent
         .post("/pokemons")
         .send({
@@ -48,8 +48,10 @@ describe("Pokemon routes", () => {
         .expect(201),
         done();
     }).timeout(2000);
+  });
 
-    it("should get 404 if name is missing", (done) => {
+  describe("POST /pokemons", () => {
+    it("should get 404 if pokemon created", (done) => {
       agent
         .post("/pokemons")
         .send({
@@ -61,6 +63,6 @@ describe("Pokemon routes", () => {
         })
         .expect(404),
         done();
-    });
+    }).timeout(2000);
   });
 });

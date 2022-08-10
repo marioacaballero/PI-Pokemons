@@ -52,7 +52,7 @@ function CardDetail(props) {
               <p onMouseEnter={handleSound}>
                 {pokemon[0].types
                   .map((typ) => typ.name.toUpperCase())
-                  .join(", ")}
+                  .join(" ")}
               </p>
               {/* {pokemon[0].types.map((typ, i) => (
                 <img

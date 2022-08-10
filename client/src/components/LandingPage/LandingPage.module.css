@@ -1,3 +1,10 @@
+.land {
+  width: 100%;
+  background-attachment: scroll;
+  background-color: black;
+  min-height: 100vh;
+}
+
 .divA {
   min-height: 16vh;
   background-color: black;
@@ -104,5 +111,152 @@
   }
   50% {
     color: black;
+  }
+}
+
+@media (max-width: 820px) {
+  .pokemon {
+    width: 30rem;
+    height: 10rem;
+    left: 5%;
+    top: 6%;
+  }
+
+  .char {
+    top: 20%;
+    width: 20rem;
+    height: 23rem;
+  }
+
+  .divA {
+    min-height: 14vh;
+  }
+
+  .divC {
+    min-height: 16vh;
+  }
+
+  .divB {
+    min-height: 32vh;
+  }
+
+  .divRedBot {
+    top: 55%;
+    height: 3rem;
+  }
+
+  .start {
+    top: 24%;
+    left: 10%;
+  }
+
+  .divB > span {
+    top: 30%;
+    left: 5%;
+    animation: none;
+    height: fit-content;
+    width: 24rem;
+    border-right: none;
+    white-space: normal;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .divA {
+    min-height: 15vh;
+  }
+
+  .divC {
+    min-height: 20vh;
+  }
+
+  .divB {
+    min-height: 45vh;
+  }
+
+  .divRedBot {
+    top: 68%;
+    height: 3rem;
+  }
+
+  .divRedBot > h2 {
+    font-size: 1.5rem;
+  }
+
+  .start {
+    width: 20rem;
+    font-size: 3.5rem;
+    height: 4rem;
+    white-space: nowrap;
+    top: 60%;
+  }
+
+  .divB > span {
+    display: none;
+  }
+
+  .char {
+    height: 20rem;
+    width: 20rem;
+    left: 10%;
+  }
+
+  .pokemon {
+    height: 10rem;
+    width: 20rem;
+    top: 1%;
+    left: 10%;
+  }
+}
+
+@media (max-width: 380px) {
+  .divA {
+    min-height: 15vh;
+  }
+
+  .divC {
+    min-height: 20vh;
+  }
+
+  .divB {
+    min-height: 50vh;
+  }
+
+  .divRedBot {
+    top: 80%;
+    height: 3rem;
+  }
+
+  .divRedBot > h2 {
+    font-size: 1.5rem;
+  }
+
+  .start {
+    width: 12rem;
+    font-size: 3.5rem;
+    height: 4rem;
+    white-space: nowrap;
+    top: 68%;
+    left: 4%;
+
+  }
+
+  .divB > span {
+    display: none;
+  }
+
+  .char {
+    height: 20rem;
+    width: 20rem;
+    left: 5%;
+    top: 22%;
+  }
+
+  .pokemon {
+    height: 10rem;
+    width: 20rem;
+    top: 1%;
+    left: 5%;
   }
 }
