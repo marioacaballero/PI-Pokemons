@@ -5,7 +5,8 @@ import { newPokemon } from "../../actions/pokeActions";
 import { getTypes } from "../../actions/typeActions";
 import {
   handleSound,
-  handleValidate /* validators */,
+  handleValidate,
+  validators,
 } from "../Auxiliaries/Auxiliaries";
 import style from "./CardCreate.module.css";
 import pokeCenter from "../Music/FireRedLeafGreen Pokemon Center.mp3";
@@ -26,7 +27,7 @@ function CardCreate(props) {
     secondT: "",
   };
 
-  // const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const [pokemon, setPokemon] = useState(initialState);
 
   useEffect(() => {
@@ -39,12 +40,12 @@ function CardCreate(props) {
   const handleInputChange = (event) => {
     event.preventDefault();
 
-    // setErrors(
-    //   validators({
-    //     ...pokemon,
-    //     [event.target.name]: event.target.value,
-    //   })
-    // );
+    setErrors(
+      validators({
+        ...pokemon,
+        [event.target.name]: event.target.value,
+      })
+    );
 
     setPokemon({
       ...pokemon,
@@ -67,7 +68,7 @@ function CardCreate(props) {
       dispatch(cleanPokemons);
       setTimeout(() => {
         props.history.push("/home");
-      }, 3000);
+      }, 2000);
     } else {
       alert(handleValidate(pokemon)); //show alert if error validate exist
     }
@@ -108,8 +109,8 @@ function CardCreate(props) {
               value={pokemon.name}
               onChange={(e) => handleInputChange(e)}
             />
-            {/* {errors.name && alert(errors.name)} */}
           </div>
+          {errors.name && <span>{errors.name}</span>}
           <div>
             <label>
               <div className={style.h4m}>
@@ -148,6 +149,7 @@ function CardCreate(props) {
               </select>
             </div>
           </div>
+          {errors.types && <span>{errors.types}</span>}
           <div>
             <label>
               <div className={style.h4m}>
@@ -162,6 +164,7 @@ function CardCreate(props) {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
+          {errors.stats && <span>{errors.stats}</span>}
           <div>
             <label>
               <div className={style.h4m}>
@@ -176,6 +179,7 @@ function CardCreate(props) {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
+          {errors.stats && <span>{errors.stats}</span>}
           <div>
             <label>
               <div className={style.h4m}>
@@ -190,6 +194,7 @@ function CardCreate(props) {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
+          {errors.stats && <span>{errors.stats}</span>}
           <div>
             <label>
               <div className={style.h4m}>
@@ -204,6 +209,7 @@ function CardCreate(props) {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
+          {errors.stats && <span>{errors.stats}</span>}
           <div>
             <label>
               <div className={style.h4m}>
@@ -218,6 +224,7 @@ function CardCreate(props) {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
+          {errors.weight && <span>{errors.weight}</span>}
           <div>
             <label>
               <div className={style.h4m}>
@@ -232,6 +239,7 @@ function CardCreate(props) {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
+          {errors.height && <span>{errors.height}</span>}
         </section>
       </div>
       <div className={style.divButton}>

@@ -105,15 +105,15 @@ export const validators = (pokemon) => {
     Number(pokemon.speed) >= 150 ||
     Number(pokemon.speed) <= 0
   ) {
-    error.stats = "HP, ATTACK, DEFENSE AND SPEED must be between 0 and 150";
+    error.stats = "The stat must be (1 - 150)";
   }
 
   if (pokemon.weight >= 9999 || pokemon.weight <= 0) {
-    error.height = "WEIGHT must be between 0 and 9999";
+    error.weight = "WEIGHT must be (1 - 9999)";
   }
 
   if (pokemon.height >= 200 || pokemon.height <= 0) {
-    error.weight = "HEIGHT must be between 0 and 200";
+    error.height = "HEIGHT must be (1 - 200)";
   }
 
   return error;

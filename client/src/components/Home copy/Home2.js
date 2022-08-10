@@ -32,7 +32,11 @@ function Home(props) {
       ) : (
         <div></div>
       )}
-      {pokemons.length > 0 ? <Filters setOrder={setOrder} /> : <div></div>}
+      {pokemons.length > 0 ? (
+        <Filters setOrder={setOrder} setCurrentPage={setCurrentPage} />
+      ) : (
+        <div></div>
+      )}
       <div className={style.pokemons}>
         {pokemons.length > 0 ? (
           pokePage().map((pok) => (

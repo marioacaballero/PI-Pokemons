@@ -37,6 +37,17 @@
   background-color: #eaeb80;
 }
 
+.secStat > span {
+  display: flex;
+  height: 1rem;
+  font-size: 0.65rem;
+  color: red;
+  padding-right: 50%;
+  /* justify-content: center;
+  align-items: top; */
+  /* position: absolute; */
+}
+
 .img {
   justify-content: center;
   align-items: center;
@@ -71,12 +82,15 @@ label {
   cursor: pointer;
 }
 .mainDiv > section > div {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
   height: 3.8rem;
   gap: 4rem;
+  position: relative;
 }
 
 input {
@@ -186,9 +200,10 @@ input {
   }
 
   .mainDiv > section {
-    height: 24rem;
+    height: fit-content;
     width: 20rem;
   }
+
 
   .inpImg {
     width: 18rem;
@@ -238,7 +253,7 @@ input {
   }
 
   .mainDiv > section {
-    height: 24rem;
+    height: fit-content;
     width: 19rem;
   }
 

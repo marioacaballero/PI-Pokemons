@@ -2,15 +2,16 @@ import React from "react";
 import * as ReactRedux from "react-redux";
 import { orderPokemons } from "../../../actions/allPokeActions";
 import { handleSound } from "../../Auxiliaries/Auxiliaries";
-import style from './Order.module.css';
+import style from "./Order.module.css";
 
-function Order({ setOrder }) {
+function Order({ setOrder, setCurrentPage }) {
   const dispatch = ReactRedux.useDispatch();
 
   const handleOrder = (event) => {
     event.preventDefault();
     dispatch(orderPokemons(event.target.value));
     setOrder(event.target.value);
+    setCurrentPage(0);
   };
   return (
     <div className={style.mainDiv}>

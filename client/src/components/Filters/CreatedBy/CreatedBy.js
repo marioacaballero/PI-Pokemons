@@ -4,11 +4,12 @@ import { filterPokemons2 } from "../../../actions/allPokeActions";
 import { handleSound } from "../../Auxiliaries/Auxiliaries";
 import style from "./CreatedBy.module.css";
 
-function CreatedBy() {
+function CreatedBy({ setCurrentPage }) {
   const dispatch = ReactRedux.useDispatch();
   const handleCreated = (event) => {
     event.preventDefault();
     dispatch(filterPokemons2(event.target.value));
+    setCurrentPage(0);
   };
   return (
     <div className={style.mainDiv}>

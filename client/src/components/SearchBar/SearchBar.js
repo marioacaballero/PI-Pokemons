@@ -5,11 +5,12 @@ import style from "./SearchBar.module.css";
 import poke from "../Imgs/pokeball2.png";
 import { handleSound } from "../Auxiliaries/Auxiliaries";
 
-function SearchBar() {
+function SearchBar({ setCurrentPage }) {
   const [search, setSearch] = useState("");
   const dispatch = ReactRedux.useDispatch();
 
   const handleInputChange = (event) => {
+    event.preventDefault();
     setSearch(event.target.value);
   };
 
@@ -18,6 +19,7 @@ function SearchBar() {
     dispatch(cleanPokemons(dispatch));
     dispatch(getPokeSearch(search));
     setSearch("");
+    setCurrentPage(0);
   };
   return (
     <form onSubmit={(event) => handleSubmit(event)} className={style.sear}>

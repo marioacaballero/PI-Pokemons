@@ -5,7 +5,7 @@ import { filterPokemons } from "../../../actions/allPokeActions";
 import style from "./Types.module.css";
 import { handleSound } from "../../Auxiliaries/Auxiliaries";
 
-function Types() {
+function Types({ setCurrentPage }) {
   const dispatch = ReactRedux.useDispatch();
 
   useEffect(() => {
@@ -17,6 +17,7 @@ function Types() {
   const handleTypes = (event) => {
     event.preventDefault();
     dispatch(filterPokemons(event.target.value));
+    setCurrentPage(0);
   };
 
   return (

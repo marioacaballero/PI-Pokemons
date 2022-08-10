@@ -33,11 +33,10 @@ function CardDetail(props) {
       )}
       {pokemon.length > 0 ? (
         <div className={style.main}>
-          <img
-            alt={pokemon[0].name}
-            src={pokemon[0].img}
-            className={style.img}
-          />
+          <div className={style.img}>
+            <div className={style.linkDetail}>{pokemon[0].name.toUpperCase()}</div>
+            <img alt={pokemon[0].name} src={pokemon[0].img}/>
+          </div>
           <div className={style.allstats}>
             <section>
               <div className={style.h4m}>
