@@ -10,6 +10,14 @@ export const handleSound = () => {
   return sonido.play();
 };
 
+export const handleMuted = () => {
+  const elemet = document.querySelectorAll("audio");
+  // console.log(elemet[0].muted);
+  elemet.forEach((elem) => {
+    elem.muted ? (elem.muted = false) : (elem.muted = true);
+  });
+};
+
 //create a handle validator to set erros
 export const handleValidate = (pokemon) => {
   //some validator to prevent post on db with errors

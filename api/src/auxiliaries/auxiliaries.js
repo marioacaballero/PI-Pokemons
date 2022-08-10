@@ -38,7 +38,7 @@ const pokemonsApi = async () => {
 
       apiPokemons.push(...apiRespModif);
       next = apiResp.data.next;
-    } while (next != null && apiPokemons.length < 40); //with apiPokemons.length I can take the limits of the pokemons to get with 20 to 20 for time.
+    } while (next != null && apiPokemons.length < 150); //with apiPokemons.length I can take the limits of the pokemons to get with 20 to 20 for time.
     // console.log(apiPokemons);
 
     if (apiPokemons.length > 150) {

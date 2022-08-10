@@ -6,6 +6,17 @@
   align-items: center;
   height: 3.3rem;
 } */
+.btnMuted {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: transparent;
+  cursor: pointer;
+}
+
+.btnMuted:hover {
+  animation: btn 1s linear infinite;
+}
 
 .pokemon {
   width: 8.3rem;
@@ -52,6 +63,18 @@
 }
 
 @keyframes pokem {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes btn {
   0% {
     transform: scale(1);
   }

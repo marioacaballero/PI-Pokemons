@@ -4,11 +4,12 @@ import style from "./NavBar.module.css";
 import pokemon from "../Imgs/pokemon5.png";
 import newpoke from "../Imgs/newPokemon.png";
 import { paths } from "./Auxiliaries/Auxiliar";
-import { handleSound } from "../Auxiliaries/Auxiliaries";
+import { handleMuted, handleSound } from "../Auxiliaries/Auxiliaries";
 
 function NavBar(props) {
   return (
     <div className={paths(props.location.pathname)}>
+      <button className={style.btnMuted} onClick={handleMuted}>🎶</button>
       <Link to={"/home"} onMouseDown={handleSound} onMouseEnter={handleSound}>
         <img alt="pokemon" src={pokemon} className={style.pokemon} />
       </Link>
