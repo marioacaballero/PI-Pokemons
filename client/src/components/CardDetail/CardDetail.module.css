@@ -39,13 +39,13 @@
   height: 3.8rem;
 }
 
-h5,
-h4,
+.h5m,
+.h4m,
 p {
   width: 10rem;
 }
 
-h5 {
+.h5m {
   position: absolute;
   background-color: #a4a29a;
   margin: 0;
@@ -54,7 +54,8 @@ h5 {
   border-radius: 0.5rem;
   z-index: 1;
 }
-h4 {
+
+.h4m {
   position: relative;
   display: flex;
   justify-content: center;
@@ -64,7 +65,9 @@ h4 {
   color: white;
   z-index: 2;
   -webkit-text-stroke: 2px #a4a29a;
+  font-weight: bold;
 }
+
 p {
   display: flex;
   align-items: center;
@@ -119,13 +122,13 @@ p:hover {
     width: 20rem;
   }
 
-  .allstats > section{
+  .allstats > section {
     gap: 2rem;
     height: 2.2rem;
   }
 
-  h4,
-  h5{
+  .h4m,
+  .h5m {
     width: 7.5rem;
     height: 0.8rem;
     font-size: 1.6rem;
@@ -151,13 +154,13 @@ p:hover {
     width: 19rem;
   }
 
-  .allstats > section{
+  .allstats > section {
     gap: 1.6rem;
     height: 2.1rem;
   }
 
-  h4,
-  h5{
+  .h4m,
+  .h5m {
     width: 7rem;
     height: 0.8rem;
     font-size: 1.6rem;

@@ -8,6 +8,7 @@ import {
   handleValidate /* validators */,
 } from "../Auxiliaries/Auxiliaries";
 import style from "./CardCreate.module.css";
+import pokeCenter from "../Music/FireRedLeafGreen Pokemon Center.mp3";
 
 function CardCreate(props) {
   const dispatch = ReactRedux.useDispatch();
@@ -74,6 +75,9 @@ function CardCreate(props) {
 
   return (
     <form onSubmit={(event) => handleSubmit(event)} className={style.main}>
+      <audio autoPlay loop>
+        <source src={pokeCenter} type="audio/mpeg" />
+      </audio>
       <div className={style.mainDiv}>
         <section className={style.secImg}>
           <img
@@ -94,10 +98,10 @@ function CardCreate(props) {
         <section className={style.secStat}>
           <div>
             <label>
-              <h4>
-                <h4>NAME</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>NAME</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <input
               name="name"
@@ -108,10 +112,10 @@ function CardCreate(props) {
           </div>
           <div>
             <label>
-              <h4>
-                <h4>TYPES</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>TYPES</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <div className={style.divTypes}>
               <select
@@ -146,10 +150,10 @@ function CardCreate(props) {
           </div>
           <div>
             <label>
-              <h4>
-                <h4>HP</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>HP</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <input
               name="hp"
@@ -160,10 +164,10 @@ function CardCreate(props) {
           </div>
           <div>
             <label>
-              <h4>
-                <h4>ATTACK</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>ATTACK</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <input
               name="attack"
@@ -174,10 +178,10 @@ function CardCreate(props) {
           </div>
           <div>
             <label>
-              <h4>
-                <h4>DEFENSE</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>DEFENSE</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <input
               name="defense"
@@ -188,10 +192,10 @@ function CardCreate(props) {
           </div>
           <div>
             <label>
-              <h4>
-                <h4>SPEED</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>SPEED</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <input
               name="speed"
@@ -200,13 +204,12 @@ function CardCreate(props) {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
-
           <div>
             <label>
-              <h4>
-                <h4>WEIGHT</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>WEIGHT</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <input
               name="weight"
@@ -217,10 +220,10 @@ function CardCreate(props) {
           </div>
           <div>
             <label>
-              <h4>
-                <h4>HEIGHT</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>HEIGHT</div>
+                <div className={style.h5m}></div>
+              </div>
             </label>
             <input
               name="height"
@@ -238,10 +241,10 @@ function CardCreate(props) {
           onMouseDown={handleSound}
           onMouseEnter={handleSound}
         >
-          <h4>
-            <h4>LET'S GO!</h4>
-            <h5></h5>
-          </h4>
+          <div className={style.h4m}>
+            <div className={style.h4m}>LET'S GO</div>
+            <div className={style.h5m}></div>
+          </div>
         </button>
       </div>
     </form>

@@ -4,6 +4,7 @@ import { cleanPokeDetail, getPokemonDetail } from "../../actions/pokeActions";
 import { handleSound } from "../Auxiliaries/Auxiliaries";
 import style from "./CardDetail.module.css";
 import LoadingForDet from "./Loading/LoadingForDet";
+import wild from "../Music/Pokemon FireRedLeafGreen Wild Pokemon Encounter.mp3";
 
 function CardDetail(props) {
   const id = props.match.params.id;
@@ -23,6 +24,13 @@ function CardDetail(props) {
   return (
     <div>
       {pokemon.length > 0 ? (
+        <audio autoPlay loop>
+          <source src={wild} type="audio/mpeg" />
+        </audio>
+      ) : (
+        <div></div>
+      )}
+      {pokemon.length > 0 ? (
         <div className={style.main}>
           <img
             alt={pokemon[0].name}
@@ -31,24 +39,24 @@ function CardDetail(props) {
           />
           <div className={style.allstats}>
             <section>
-              <h4>
-                <h4>ID</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>ID</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].id}</p>
             </section>
             <section>
-              <h4>
-                <h4>NAME</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>NAME</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].name.toUpperCase()}</p>
             </section>
             <section>
-              <h4>
-                <h4>TYPES</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>TYPES</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>
                 {pokemon[0].types
                   .map((typ) => typ.name.toUpperCase())
@@ -64,45 +72,45 @@ function CardDetail(props) {
               ))} */}
             </section>
             <section>
-              <h4>
-                <h4>HP</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>HP</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].hp}</p>
             </section>
             <section>
-              <h4>
-                <h4>ATTACK</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>ATTACK</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].attack}</p>
             </section>
             <section>
-              <h4>
-                <h4>DEFENSE</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>DEFENSE</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].defense}</p>
             </section>
             <section>
-              <h4>
-                <h4>SPEED</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>SPEED</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].speed}</p>
             </section>
             <section>
-              <h4>
-                <h4>WEIGHT</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>WEIGHT</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].weight}</p>
             </section>
             <section>
-              <h4>
-                <h4>HEIGHT</h4>
-                <h5></h5>
-              </h4>
+              <div className={style.h4m}>
+                <div className={style.h4m}>HEIGHT</div>
+                <div className={style.h5m}></div>
+              </div>
               <p onMouseEnter={handleSound}>{pokemon[0].height}</p>
             </section>
           </div>

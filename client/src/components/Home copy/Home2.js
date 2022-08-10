@@ -6,6 +6,7 @@ import Filters from "../Filters/Filters";
 import Loading from "../Loading/Loading";
 import Pagination from "../Pagination/Pagination";
 import style from "./Home.module.css";
+import pallet from "../Music/Pokemon FireRedLeafGreen Pallet Town.mp3";
 
 function Home(props) {
   const dispatch = ReactRedux.useDispatch();
@@ -17,13 +18,20 @@ function Home(props) {
   }, [dispatch]);
 
   const pokemons = ReactRedux.useSelector((state) => state.pokemons.pokemons);
-  
+
   const pokePage = () => {
     return pokemons.slice(currentPage, currentPage + 12);
   };
 
   return (
     <div className={style.box}>
+      {pokemons.length > 0 ? (
+        <audio autoPlay loop>
+          <source src={pallet} type="audio/mpeg" />
+        </audio>
+      ) : (
+        <div></div>
+      )}
       {pokemons.length > 0 ? <Filters setOrder={setOrder} /> : <div></div>}
       <div className={style.pokemons}>
         {pokemons.length > 0 ? (

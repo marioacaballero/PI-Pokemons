@@ -13,7 +13,7 @@ function LandingPage(props) {
   return (
     <div className={style.land}>
       <audio autoPlay loop>
-        <source src={intro} type="audio/mpeg" />{" "}
+        <source src={intro} type="audio/mpeg" />
       </audio>
       <div className={style.divA}>
         <div className={style.divRedTop}></div>
