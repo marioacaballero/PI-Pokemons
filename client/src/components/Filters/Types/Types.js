@@ -22,13 +22,15 @@ function Types({ setCurrentPage }) {
 
   return (
     <div className={style.mainDiv}>
-      <select onMouseDown={handleSound} onMouseEnter={handleSound}>
+      <select onMouseDown={handleSound} onMouseEnter={handleSound} onChange={(event) => {
+            handleTypes(event);
+          }}>
         <option>TYPES</option>
         <option
           value="all"
-          onClick={(event) => {
-            handleTypes(event);
-          }}
+          // onClick={(event) => {
+          //   handleTypes(event);
+          // }}
         >
           All
         </option>
@@ -37,9 +39,9 @@ function Types({ setCurrentPage }) {
             <option
               key={typ.id}
               value={typ.name}
-              onClick={(event) => {
-                handleTypes(event);
-              }}
+              // onClick={(event) => {
+              //   handleTypes(event);
+              // }}
             >
               {typ.name.toUpperCase()}
             </option>

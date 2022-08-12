@@ -204,7 +204,7 @@
   }
 
   .divRedBot {
-    top: 68%;
+    top: 80%;
     height: 3rem;
   }
 
@@ -217,7 +217,7 @@
     font-size: 3.5rem;
     height: 4rem;
     white-space: nowrap;
-    top: 60%;
+    top: 70%;
   }
 
   .divB > span {
@@ -225,6 +225,7 @@
   }
 
   .char {
+    top: 30%;
     height: 20rem;
     width: 20rem;
     left: 10%;
@@ -233,7 +234,7 @@
   .pokemon {
     height: 10rem;
     width: 20rem;
-    top: 1%;
+    top: 2%;
     left: 10%;
   }
 }
@@ -252,7 +253,7 @@
   }
 
   .divRedBot {
-    top: 80%;
+    top: 90%;
     height: 3rem;
   }
 
@@ -265,7 +266,7 @@
     font-size: 3.5rem;
     height: 4rem;
     white-space: nowrap;
-    top: 68%;
+    top: 75%;
     left: 4%;
 
   }
@@ -278,13 +279,13 @@
     height: 20rem;
     width: 20rem;
     left: 5%;
-    top: 22%;
+    top: 30%;
   }
 
   .pokemon {
-    height: 10rem;
-    width: 20rem;
-    top: 1%;
+    height: 9rem;
+    width: 19rem;
+    top: 2%;
     left: 5%;
   }
 }

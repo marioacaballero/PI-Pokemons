@@ -13,29 +13,35 @@ function CreatedBy({ setCurrentPage }) {
   };
   return (
     <div className={style.mainDiv}>
-      <select onMouseDown={handleSound} onMouseEnter={handleSound}>
+      <select
+        onMouseDown={handleSound}
+        onMouseEnter={handleSound}
+        onChange={(event) => {
+          handleCreated(event);
+        }}
+      >
         <option> ORIGIN </option>
         <option
           value="all"
-          onClick={(event) => {
-            handleCreated(event);
-          }}
+          // onClick={(event) => {
+          //   handleCreated(event);
+          // }}
         >
           All
         </option>
         <option
           value="API"
-          onClick={(event) => {
-            handleCreated(event);
-          }}
+          // onClick={(event) => {
+          //   handleCreated(event);
+          // }}
         >
           API
         </option>
         <option
           value="DB"
-          onClick={(event) => {
-            handleCreated(event);
-          }}
+          // onClick={(event) => {
+          //   handleCreated(event);
+          // }}
         >
           DB
         </option>

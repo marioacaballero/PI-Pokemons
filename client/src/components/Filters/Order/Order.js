@@ -15,52 +15,58 @@ function Order({ setOrder, setCurrentPage }) {
   };
   return (
     <div className={style.mainDiv}>
-      <select onMouseDown={handleSound} onMouseEnter={handleSound}>
+      <select
+        onMouseDown={handleSound}
+        onMouseEnter={handleSound}
+        onChange={(event) => {
+          handleOrder(event);
+        }}
+      >
         <option
           value=""
-          onClick={(event) => {
-            handleOrder(event);
-          }}
+          // onClick={(event) => {
+          //   handleOrder(event);
+          // }}
         >
           #POKEDEX ⬆
         </option>
         <option
           value="pokeDown"
-          onClick={(event) => {
-            handleOrder(event);
-          }}
+          // onClick={(event) => {
+          //   handleOrder(event);
+          // }}
         >
           #POKEDEX ⬇
         </option>
         <option
           value="nameAZ"
-          onClick={(event) => {
-            handleOrder(event);
-          }}
+          // onClick={(event) => {
+          //   handleOrder(event);
+          // }}
         >
           NAME ⬆
         </option>
         <option
           value="nameZA"
-          onClick={(event) => {
-            handleOrder(event);
-          }}
+          // onClick={(event) => {
+          //   handleOrder(event);
+          // }}
         >
           NAME ⬇
         </option>
         <option
           value="atkUp"
-          onClick={(event) => {
-            handleOrder(event);
-          }}
+          // onClick={(event) => {
+          //   handleOrder(event);
+          // }}
         >
           ATK ⬆
         </option>
         <option
           value="atkDown"
-          onClick={(event) => {
-            handleOrder(event);
-          }}
+          // onClick={(event) => {
+          //   handleOrder(event);
+          // }}
         >
           ATK ⬇
         </option>
