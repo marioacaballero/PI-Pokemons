@@ -49,6 +49,7 @@ export const getPokeSearch = (name) => {
   return async (dispatch) => {
     try {
       if (name) {
+        // dispatch(cleanPokemons())
         const pokemon = await axios.get(
           `http://localhost:3001/pokemons?name=${name}`
         );

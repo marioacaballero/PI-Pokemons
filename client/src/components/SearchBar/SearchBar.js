@@ -11,27 +11,32 @@ function SearchBar({ setCurrentPage }) {
 
   const handleInputChange = (event) => {
     event.preventDefault();
-    setSearch(event.target.value);
+    setSearch(event.target.value.toLowerCase());
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(cleanPokemons(dispatch));
-    dispatch(getPokeSearch(search));
-    setSearch("");
-    setCurrentPage(0);
+    if (search) {
+      dispatch(getPokeSearch(search));
+      setSearch("");
+      setCurrentPage(0);
+    }
+    if (!search) {
+      alert("Please, write a name");
+      dispatch(cleanPokemons());
+      dispatch(getPokeSearch(search));
+    }
   };
   return (
     <form onSubmit={(event) => handleSubmit(event)} className={style.sear}>
       <input
-        name="search"
         placeholder="SEARCH POKEMONS BY NAME ....."
         value={search}
-        onChange={handleInputChange}
+        onChange={(e) => handleInputChange(e)}
         className={style.input}
       />
       <button
-        type={"submit"}
+        type="submit"
         className={style.btn}
         onMouseDown={handleSound}
         onMouseEnter={handleSound}

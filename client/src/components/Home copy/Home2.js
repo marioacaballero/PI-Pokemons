@@ -12,12 +12,12 @@ function Home(props) {
   const dispatch = ReactRedux.useDispatch();
   const [currentPage, setCurrentPage] = useState(0);
   const [order, setOrder] = useState("");
+  const pokemons = ReactRedux.useSelector((state) => state.pokemons.pokemons);
 
   useEffect(() => {
     dispatch(getPokemons());
   }, [dispatch]);
 
-  const pokemons = ReactRedux.useSelector((state) => state.pokemons.pokemons);
 
   const pokePage = () => {
     return pokemons.slice(currentPage, currentPage + 12);

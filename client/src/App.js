@@ -1,5 +1,4 @@
 import "./App.css";
-import "normalize.css";
 import { Route } from "react-router-dom";
 import Home from "./components/Home copy/Home2";
 import CardDetail from "./components/CardDetail/CardDetail";
