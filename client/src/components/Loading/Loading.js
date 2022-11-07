@@ -7,7 +7,7 @@ import surf from "../Music/Surf Theme  Pokémon FireRed  LeafGreen.mp3";
 function Loading() {
   return (
     <div className={style.div}>
-      <audio autoPlay loop>
+      <audio autoPlay loop muted>
         <source src={surf} type="audio/mpeg" />
       </audio>
       <img alt="Loading" src={pokeHome} className={style.img} />

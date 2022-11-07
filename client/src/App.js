@@ -5,6 +5,7 @@ import CardDetail from "./components/CardDetail/CardDetail";
 import LandingPage from "./components/LandingPage/LandingPage";
 import NavBar from "./components/NavBar/NavBar";
 import CardCreate from "./components/CardCreate/CardCreate";
+import "normalize.css"
 
 function App() {
   return (

@@ -19,11 +19,11 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-const { createPoke } = require("./src/aux2/aux2");
+// const { createPoke } = require("./src/aux2/aux2");
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async () => {
-  await createPoke();
+  // await createPoke();
 
   server.listen(3001, () => {
     console.log("%s listening at 3001"); // eslint-disable-line no-console

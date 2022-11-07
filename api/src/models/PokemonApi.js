@@ -1,6 +1,5 @@
 const { DataTypes } = require("sequelize");
-// Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+// Este modelo se creo para traer los pokemons en la primer consulta a la api y luego guardarlos en db
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(

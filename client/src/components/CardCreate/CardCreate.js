@@ -76,7 +76,7 @@ function CardCreate(props) {
 
   return (
     <form onSubmit={(event) => handleSubmit(event)} className={style.main}>
-      <audio autoPlay loop>
+      <audio autoPlay loop muted>
         <source src={pokeCenter} type="audio/mpeg" />
       </audio>
       <div className={style.mainDiv}>

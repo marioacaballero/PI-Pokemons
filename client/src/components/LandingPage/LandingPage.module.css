@@ -28,6 +28,7 @@
   border-radius: 9999px;
   border: 1px solid black;
   cursor: pointer;
+  margin-right: 2rem;
 }
 
 .btnMuted:hover {
@@ -57,16 +58,16 @@
   position: absolute;
   text-transform: uppercase;
   display: block;
-  top: 50%;
-  left: 5%;
-  width: 44ch;
+  top: 52%;
+  left: 3.5%;
+  width: 42.5ch;
   color: white;
   text-align: left;
   font-size: xx-large;
   font-weight: 700;
   white-space: nowrap;
   border-right: 4px solid;
-  animation: typing 5s steps(52), blink 0.5s infinite step-end alternate;
+  animation: typing 5s steps(50), blink 0.5s infinite step-end alternate;
   overflow: hidden;
 }
 
@@ -92,7 +93,7 @@
   position: absolute;
   justify-content: space-around;
   align-items: center;
-  bottom: 6%;
+  bottom: 2%;
   background-color: #9d0208;
   height: 8%;
   width: 100%;
@@ -107,15 +108,15 @@
   height: 27.5rem;
   position: absolute;
   right: 1rem;
-  top: 30%;
+  top: 14.5%;
 }
 
 .pokemon {
   position: absolute;
-  left: 15%;
+  left: 8%;
   top: 5%;
-  width: 750px; /*582 x 282*/
-  height: 300px;
+  width: 700px; /*582 x 282*/
+  height: 250px;
 }
 
 .start {
@@ -127,7 +128,7 @@
   background: none;
   position: absolute;
   left: 20%;
-  bottom: 24%;
+  bottom: 20%;
   animation-name: btn;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -217,7 +218,7 @@
     font-size: 3.5rem;
     height: 4rem;
     white-space: nowrap;
-    top: 70%;
+    top: 62%;
   }
 
   .divB > span {
@@ -225,7 +226,7 @@
   }
 
   .char {
-    top: 30%;
+    top: 22%;
     height: 20rem;
     width: 20rem;
     left: 10%;
@@ -236,6 +237,10 @@
     width: 20rem;
     top: 2%;
     left: 10%;
+  }
+
+  .btnMuted {
+    margin-right: 0.5rem;
   }
 }
 
@@ -266,9 +271,8 @@
     font-size: 3.5rem;
     height: 4rem;
     white-space: nowrap;
-    top: 75%;
+    top: 62%;
     left: 4%;
-
   }
 
   .divB > span {
@@ -279,7 +283,7 @@
     height: 20rem;
     width: 20rem;
     left: 5%;
-    top: 30%;
+    top: 22%;
   }
 
   .pokemon {
@@ -287,5 +291,8 @@
     width: 19rem;
     top: 2%;
     left: 5%;
+  }
+  .btnMuted {
+    margin-right: 0.5rem;
   }
 }

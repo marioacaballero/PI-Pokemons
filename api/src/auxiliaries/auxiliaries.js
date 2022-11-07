@@ -41,9 +41,11 @@ const pokemonsApi = async () => {
     } while (next != null && apiPokemons.length < 40); //with apiPokemons.length I can take the limits of the pokemons to get with 20 to 20 for time.
     // console.log(apiPokemons);
 
-    if (apiPokemons.length > 150) {
-      return apiPokemons.slice(0, 150);
-    }
+    //If I only want the first 150 just put apiPokemons.lengt < 150 and uncomment the if code below (because the api response works 20 to 20)
+
+    // if (apiPokemons.length > 150) {
+    //   return apiPokemons.slice(0, 150);
+    // }
 
     return apiPokemons;
   } catch (error) {

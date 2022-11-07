@@ -25,7 +25,7 @@ function CardDetail(props) {
   return (
     <div>
       {pokemon.length > 0 ? (
-        <audio autoPlay loop>
+        <audio autoPlay loop muted>
           <source src={wild} type="audio/mpeg" />
         </audio>
       ) : (

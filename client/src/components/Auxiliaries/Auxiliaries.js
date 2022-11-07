@@ -7,6 +7,7 @@ export const capFirstLet = (string) => {
 export const handleSound = () => {
   var sonido = new Audio();
   sonido.src = clickSound;
+  sonido.volume = 0.1;
   return sonido.play();
 };
 

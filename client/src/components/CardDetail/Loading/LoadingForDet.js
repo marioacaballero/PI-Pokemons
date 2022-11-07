@@ -7,7 +7,7 @@ import evolution from "../../Music/Evolution Theme  Pokémon FireRed  LeafGreen.
 function LoadingForDet() {
   return (
     <div className={style.loadfdet}>
-      <audio autoPlay loop>
+      <audio autoPlay loop muted>
         <source src={evolution} type="audio/mpeg" />
       </audio>
       <section className={style.pikachu}>
