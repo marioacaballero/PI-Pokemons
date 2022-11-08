@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
       const pokemon = allPokes.filter(
         (pok) => pok.name.toLowerCase() === name.toLowerCase()
       );
-      return pokemon
+      return pokemon.length
         ? res.status(200).json(pokemon)
         : res.status(404).send("Pokemon not found");
     }
@@ -45,7 +45,7 @@ router.get("/:id", async (req, res) => {
 
     //then filter by id and send the correct status
     const pokemon = allPokes.filter((pok) => pok.id == id);
-    return pokemon
+    return pokemon.length
       ? res.status(200).json(pokemon)
       : res.status(404).send("Pokemon not found");
   } catch (error) {
