@@ -7,14 +7,18 @@ export const capFirstLet = (string) => {
 export const handleSound = () => {
   var sonido = new Audio();
   sonido.src = clickSound;
-  sonido.volume = 0.1;
+  sonido.volume = 0.01;
   return sonido.play();
 };
 
 export const handleMuted = () => {
-  const elemet = document.querySelectorAll("audio");
+  const elements = document.querySelectorAll("audio");
   // console.log(elemet[0].muted);
-  elemet.forEach((elem) => {
+  elements.forEach((elem) => {
+    elem.volume = 0.1;
+  });
+  
+  elements.forEach((elem) => {
     elem.muted ? (elem.muted = false) : (elem.muted = true);
   });
 };

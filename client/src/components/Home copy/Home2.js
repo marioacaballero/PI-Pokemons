@@ -27,7 +27,7 @@ function Home(props) {
     <div className={style.box}>
       {pokemons.length > 0 ? (
         <audio autoPlay loop muted>
-          <source src={pallet} type="audio/mpeg" />
+          <source src={pallet} type="audio/mpeg"/>
         </audio>
       ) : (
         <div></div>
