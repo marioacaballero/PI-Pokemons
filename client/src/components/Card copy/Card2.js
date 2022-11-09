@@ -21,7 +21,7 @@ function Card({ name, img, id, types, history }) {
       onMouseEnter={handleSound}
     >
       <div className={style.extUp}>
-        <div className={style.link}>{name.toUpperCase()}</div>
+        <div className={style.link}>{name}</div>
         <h2 className={style.h2}>#{newId}</h2>
       </div>
       <div className={style.divImg}>
@@ -35,7 +35,7 @@ function Card({ name, img, id, types, history }) {
         {types.map((ty, i) => (
           // <img key={i} alt={typ.name} src={typ.img} className={style.typeImg} />
           <span key={i} className={typ(ty.name)}>
-            {ty.name.toUpperCase()}
+            {ty.name}
           </span>
         ))}
       </div>

@@ -43,6 +43,7 @@ h2 {
   font-weight: 600;
   /* font-size: medium; */
   text-shadow: 1px 1px black;
+  text-transform: uppercase;
 }
 
 .link {

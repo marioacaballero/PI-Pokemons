@@ -31,6 +31,7 @@
   font-size: medium;
   text-shadow: 1px 1px black;
   overflow: hidden;
+  text-transform: uppercase;
 }
 
 .bug {
