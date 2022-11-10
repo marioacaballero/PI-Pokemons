@@ -7,49 +7,15 @@
 ## Objetivos del Proyecto
 
 - Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
+- Afirmar y conectar los conceptos aprendidos.
 - Aprender mejores prácticas.
 - Aprender y practicar el workflow de GIT.
 - Usar y practicar testing.
 
-<!-- ## Horarios y Fechas
+## Comenzando
 
-El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO). -->
-
-<!-- ## Comenzando
-
- 1. Forkear el repositorio para tener una copia del mismo en sus cuentas
- 2. Clonar el repositorio en sus computadoras para comenzar a trabajar
-
-Tendrán un `boilerplate` con la estructura general tanto del servidor como de cliente.
-
-__IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
-
-Actualmente las versiónes necesarias son:
-
-- __Node__: 12.18.3 o mayor
-- __NPM__: 6.14.16 o mayor
-
-Para verificar que versión tienen instalada:
-
-```bash
-node -v
-npm -v
-```
-
-__ACLARACIÓN:__ Las dependencias actuales se encuentran en las versiones que venimos trabajando durante el bootcamp.
-
-Versiones:
-
-- __react__: 17.0.1
-- __react-dom__: 17.0.1
-- __react-router-dom__: 5.2.0
-- __redux__: 4.0.5
-- __react-redux__: 7.2.3
-
-Está permitido, __bajo su responsabilidad__, actualizar las dependencias a versiones más actuales.
-
-> __IMPORTANTE:__ Versiones mas actuales podrían presentar configuraciones diferentes respecto a las versiones en las que venimos trabajando durante el bootcamp. -->
+1.  Clonar el repositorio en sus computadoras
+2.  Ejecutar el comando `npm install` en la consola, dentro de los directorios `api` y `client` para poder instalar las dependencias
 
 ## BoilerPlate
 
@@ -69,29 +35,6 @@ Adicionalmente será necesario que creen desde psql una base de datos llamada `p
 
 El contenido de `client` fue creado usando: Create React App.
 
-<!-- ## Enunciado
-
-La idea general es crear una aplicación en la cual se puedan ver los distintos Pokemon utilizando la api externa [pokeapi](https://pokeapi.co/) y a partir de ella poder, entre otras cosas:
-
-- Buscar pokemons
-- Filtrarlos / Ordenarlos
-- Crear nuevos pokemons
-
-__IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados sino que deben realizarlo ustedes mismos. En particular alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
-
-### Únicos Endpoints/Flags que pueden utilizar
-
-- GET <https://pokeapi.co/api/v2/pokemon>
-- GET <https://pokeapi.co/api/v2/pokemon/{id}>
-- GET <https://pokeapi.co/api/v2/pokemon/{name}>
-- GET <https://pokeapi.co/api/v2/type>
-
-### Requerimientos mínimos
-
-A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
-
-__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components) -->
-
 #### Tecnologías necesarias
 
 - [ ] React
@@ -99,7 +42,7 @@ __IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estil
 - [ ] Express
 - [ ] Sequelize - Postgres
 
-## Comenzando
+## Ejecucion
 
 Para poder correr localmente el proyecto funcionando es necesario realizar los siguientes pasos una vez que se hicieron las configuraciones previas del archivo `.env` y la creacion de la base de datos en PostgreSQL con el nombre `pokemon`:
 
@@ -130,8 +73,6 @@ Se debe desarrollar una aplicación de React/Redux que contenga las siguientes p
 - [ ] Botones/Opciones para filtrar por tipo de pokemon y por pokemon existente o creado por nosotros
 - [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente los pokemons por orden alfabético y por ataque
 - [ ] Paginado para ir buscando y mostrando los siguientes pokemons, 12 pokemons por pagina.
-
-<!-- __IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto los pokemons traidos desde la API como así también las de la base de datos. Por otro lado, si revisan el endpoint que trae todos los pokemons verán que no muestra la información del pokemon sino una URL para hacer un subrequest y obtener los datos de allí. Tendrán que por cada pokemon que van a mostrar hacer otro request a esa URL para obtener su imagen y tipos. Debido a que esto puede hacer que la búsqueda sea muy lenta limitar el resultado total a 40 pokemons totales. -->
 
 **Ruta de detalle de Pokemon**: debe contener
 
@@ -175,13 +116,9 @@ El modelo de la base de datos deberá tener las siguientes entidades (Aquellas p
 
 La relación entre ambas entidades debe ser de muchos a muchos ya que un pokemon puede pertenecer a más de un tipo y, a su vez, un tipo puede incluir a muchos pokemons.
 
-<!-- **IMPORTANTE**: Pensar como modelar los IDs de los pokemons en la base de datos. Existen distintas formas correctas de hacerlo pero tener en cuenta que cuando hagamos click en alguno, este puede provenir de la API o de la Base de Datos por lo que cuando muestre su detalle no debería haber ambigüedad en cual se debería mostrar. Por ejemplo si en la API el pokemon `Bulbasaur` tiene id = 1 y en nuestra base de datos creamos un nuevo pokemon `Henry` con id = 1, ver la forma de diferenciarlos cuando querramos acceder al detalle del mismo. -->
-
 ## Backend
 
 Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
-
-<!-- **IMPORTANTE**: No está permitido utilizar los filtrados, ordenamientos y paginados brindados por la API externa, todas estas funcionalidades tienen que implementarlas ustedes. -->
 
 - [ ] **GET /pokemons**:
   - Obtener un listado de los pokemons desde pokeapi.
@@ -200,8 +137,34 @@ Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
   - Obtener todos los tipos de pokemons posibles
   - En una primera instancia deberán traerlos desde pokeapi y guardarlos en su propia base de datos y luego ya utilizarlos desde allí
 
-<!-- ## Testing
+## Testing
 
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos -->
+- [ ] Para correr los test del front se debe acceder al directorio `client` y ejecutar el siguiente comando en consola
+
+```env
+npm test
+```
+
+Para correr todos los test o
+
+```env
+npm test 'nombre del archivo'
+```
+
+Para correr un test individual
+
+- [ ] Para correr los test del front se debe acceder al directorio `api` y ejecutar el siguiente comando en consola
+
+```env
+npm test
+```
+
+Para correr todos los test o
+
+```env
+npm test 'nombre del archivo'
+```
+
+Para correr un test individual
+
+- **IMPORTANTE**: _Todos los test estan skipeados, se debe acceder a cada uno y quitarle el `skip` (la letra `x`) que se encuentra antes del `describe` principal de cada test, ubicados en los directorios con el nombre **test** de `api` y `client` respectivamente_
